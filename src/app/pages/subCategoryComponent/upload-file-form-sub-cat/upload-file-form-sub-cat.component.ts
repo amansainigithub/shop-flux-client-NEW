@@ -56,7 +56,7 @@ progressBar:any ={
       (data=>{
        
       console.log(data);
-      this.filterData=data;
+      
       },
       error=>{
         this._snackbar_helper.
@@ -69,6 +69,10 @@ progressBar:any ={
     });
       
     }
+
+    this.filterData=null;
+      this.files=this.getSubCategoryFilesById();
+
     //SNACK BAR MESSAGE
     this._snackbar_helper.
     OpenSnackbar_verticalPosition_top_right("files upload success!!", "ok",2000);
