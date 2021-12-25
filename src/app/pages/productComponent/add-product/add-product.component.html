@@ -1,4 +1,8 @@
-<div class="container p-5">
+<div class="pB"  *ngIf="progressBar.dynamicValue" >
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+ </div>
+<div  style="background-color: whitesmoke;">
+<div class="container p-5 shadow-lg">
 <h5 class="text-primary font-weight-bold">ADD PRODUCT</h5>
 
 <!-- FORM SATRTING -->
@@ -32,7 +36,7 @@
                class="form-control"
                [(ngModel)]="addProduct.manufacturingPrice" name="manufacturingPrice"
                id="inlineFormInputGroupUsername"
-               placeholder="Username">
+               placeholder="Manufacturing-Price">
             </div>
           </div>
 
@@ -49,7 +53,7 @@
                class="form-control"
                [(ngModel)]="addProduct.mrpPrice" name="mrpPrice"
                id="inlineFormInputGroupUsername"
-               placeholder="Username">
+               placeholder="MRP-Price">
             </div>
           </div>
 
@@ -65,7 +69,7 @@
                class="form-control"
                [(ngModel)]="addProduct.sellPrice" name="sellPrice"
                id="inlineFormInputGroupUsername"
-               placeholder="Username">
+               placeholder="SELL-Price">
             </div>
           </div>
 
@@ -87,7 +91,30 @@
              placeholder="Quantity">
           </div>
         </div>
+
+
+        <div class="form-row">
+        <div class="col-sm-4 my-1 mt-3 mb-4">
+          <label>SUB-CATEGORY</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-database"></i>
+              </div>
+            </div>
+
+            <select name="subCategoryId"  [(ngModel)]="selectedSubCategoryId" class="custom-select" id="inlineFormCustomSelectPref">
+              <option selected disabled>Choose...</option>
+              <option *ngFor="let item of subCategoryList"
+                      [ngValue]="item.productSubCategoryId">
+                      {{item.productSubCategoryId}} = {{item.subCategoryName}}
+              </option>
+            </select>
+
+          </div>
+        </div>
         
+       </div>
 
        <div class="container mb-3" id="pd-100">
         <h5 class="p-4 text-primary">Product Description</h5>
@@ -95,21 +122,21 @@
           <label for="exampleFormControlTextarea1">Description</label>
           <textarea 
           [(ngModel)]="addProduct.description" name="description"
-          class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
         </div>
         
         <div class="form-group">
           <label for="exampleFormControlTextarea1">SHORT-Description</label>
           <textarea 
           [(ngModel)]="addProduct.shortDescription" name="shortDescription"
-          class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
         </div>
 
         <div class="form-group">
           <label for="exampleFormControlTextarea1">LONG-Description</label>
           <textarea 
           [(ngModel)]="addProduct.longDescription" name="longDescription"
-          class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
         </div>
        </div>
 
@@ -120,24 +147,26 @@
           <label for="exampleFormControlTextarea1">product Details</label>
           <textarea 
           [(ngModel)]="addProduct.productDetails" name="productDetails"
-          class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
         </div>
         
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Product-Long-Details</label>
           <textarea 
           [(ngModel)]="addProduct.productLongDetails" name="productLongDetails"
-          class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
         </div>
 
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Product-Short-Details</label>
           <textarea 
           [(ngModel)]="addProduct.productShortDetails" name="productShortDetails"
-          class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
         </div>
        </div>
 
+
+     
     
 
 
@@ -149,4 +178,5 @@
 </div>
 <!-- FORM ENDING -->
 
+</div>
 </div>
