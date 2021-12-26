@@ -11,3 +11,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 {
     object-fit: cover;
 }
+
+.whitesmoke
+{
+    background-color: whitesmoke;
+}
+
+.underline
+{
+    text-decoration: underline;
+}

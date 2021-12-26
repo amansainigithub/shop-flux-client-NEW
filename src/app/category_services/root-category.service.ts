@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthURLService } from '../helper-msg/auth-url.service';
-import { SnackbarHelperService } from '../helper-msg/snackbar-helper.service';
-import { AuthService } from '../_services/auth.service';
 
 @Injectable({
   providedIn: 'root'

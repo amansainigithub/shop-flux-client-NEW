@@ -48,6 +48,7 @@ export class AddProductComponent implements OnInit {
     "savePricePercentage": "",
     "sellPrice": "",
     "shortDescription": "",
+    "isEnabled":"",
     "subCategoryId": "",
     productSubCategoryForm:
     {

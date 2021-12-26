@@ -116,6 +116,12 @@
         
        </div>
 
+
+       <div class="form-group">
+        <mat-slide-toggle name="isEnabled" [(ngModel)]="addProduct.isEnabled">
+        </mat-slide-toggle>
+      </div>
+
        <div class="container mb-3" id="pd-100">
         <h5 class="p-4 text-primary">Product Description</h5>
         <div class="form-group">
@@ -170,7 +176,9 @@
     
 
 
-        <button type="submit" class="btn btn-primary">Sign in</button>
+       <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-sm">Create Product</button>
+       </div>
 
        
       </form>

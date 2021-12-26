@@ -17,5 +17,23 @@ export class ProductService {
   }
 
 
+  getProductList()
+  {
+    return this.http.get(this.auth_URL.authUrl+"getProductList");
+  }
+
+
+  getProductById(productId:any)
+  {
+    return this.http.get(`${this.auth_URL.authUrl}getProductById/${productId}`);
+  }
+
+
+  removeProductById(productId:any)
+  {
+    return this.http.delete(`${this.auth_URL.authUrl}deleteProductById/${productId}`);
+  }
+
+
 
 }

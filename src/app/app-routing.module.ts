@@ -22,6 +22,10 @@ import { UploadFileFormRootCatComponent } from './pages/rootCategoryComponent/up
 import { UploadFilesSubCategoryComponent } from './pages/subCategoryComponent/upload-files-sub-category/upload-files-sub-category.component';
 import { UploadFileFormSubCatComponent } from './pages/subCategoryComponent/upload-file-form-sub-cat/upload-file-form-sub-cat.component';
 import { AddProductComponent } from './pages/productComponent/add-product/add-product.component';
+import { ShowProductComponent } from './pages/productComponent/show-product/show-product.component';
+import { UpdateProductComponent } from './pages/productComponent/update-product/update-product.component';
+import { UploadFilesProductComponent } from './pages/productComponent/upload-files-product/upload-files-product.component';
+import { UploadFilesFormProductComponent } from './pages/productComponent/upload-files-form-product/upload-files-form-product.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -46,7 +50,10 @@ const routes: Routes = [
               { path: 'uploadFilesSubCategory', component: UploadFilesSubCategoryComponent},
               { path: 'uploadFormSubCategoryFiles/:subCategoryId', component: UploadFileFormSubCatComponent},
               { path: 'addProduct', component: AddProductComponent},
-             
+              { path: 'showProduct', component:ShowProductComponent },
+              { path: 'updateProduct/:productId', component:UpdateProductComponent },
+              { path: 'linkFiles', component:UploadFilesProductComponent },
+              { path: 'uploadproductFiles/:productId', component:UploadFilesFormProductComponent },
 
 
             ]

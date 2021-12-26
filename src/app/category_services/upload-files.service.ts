@@ -14,13 +14,13 @@ export class UploadFilesService {
 
 
 
-  genericUploadFileService(files:any,rootCategoryId:any,categoryTemplatename:any)
+  genericUploadFileService(files:any,genericCategoryId:any,categoryTemplatename:any)
   {
     const formData: FormData = new FormData();
     formData.append('files', files);
     
     //COLLECT URL
-    var url=this.auth_URL.authUrl+"uploadFiles/"+categoryTemplatename+"/"+rootCategoryId;
+    var url=this.auth_URL.authUrl+"uploadFiles/"+categoryTemplatename+"/"+genericCategoryId;
     
     return this._http.post(url,formData);
   }
