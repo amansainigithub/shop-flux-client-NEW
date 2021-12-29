@@ -32,6 +32,13 @@ export class UploadFilesService {
     return this._http.get(url);
   }
 
+
+  getProductLinkingFilesByProductId(genericId:any)
+  {
+    var url= this.auth_URL.authUrl+"getProductFilesByProductId/"+genericId;
+    return this._http.get(url);
+  }
+
   
 
 

@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UploadFilesService } from 'src/app/category_services/upload-files.service';
@@ -17,10 +18,12 @@ export class UploadFilesFormProductComponent implements OnInit {
     productId:any;
     files:any=FileList;
     filterData:any;
+    linkingNode:any=FileList;
 
   ngOnInit(): void {
     this.productId = this._activateRouter.snapshot.params.productId;
     this.getProductFilesById();
+    this.getProductLinkingFilesByProductId();
   
   }
 
@@ -91,6 +94,7 @@ export class UploadFilesFormProductComponent implements OnInit {
      this._uploadService.getGenericBucketFilesById(this.productId).subscribe(
        data=>{
              this.filterData=data;
+             
              //STOP PROGRESS BAR
              this.progressBar_Stop();
        },
@@ -103,6 +107,32 @@ export class UploadFilesFormProductComponent implements OnInit {
      )
  
    }
+
+
+
+    //************GET LINKING PRODUCT FILES BY PRODUCT ID */
+    getProductLinkingFilesByProductId()
+    {
+       //STARTING PROGRESS BAR
+       this.progressBar_Starting();
+ 
+      this._uploadService.getProductLinkingFilesByProductId(this.productId).subscribe(
+        data=>{
+              this.linkingNode = data;
+
+              //STOP PROGRESS BAR
+              this.progressBar_Stop();
+        },
+        error=>{
+                console.log(error);
+               //STOP PROGRESS BAR
+               this.progressBar_Stop();
+            
+        }
+      )
+  
+    }
+  
  
 
     ////DELETE BUCKET FILES 
@@ -134,7 +164,82 @@ export class UploadFilesFormProductComponent implements OnInit {
    
   }
 
+ //BIND IMAGE
 
+ bindForm={
+  "bucketId":"",
+  "categoryId":"",
+  "categoryHierarchyName":"",
+  "fileTemplateName":""
+}
+
+  //Bind Image
+  bindFileWithProductImageUrl(bucketId:any)
+  {
+      //STARTING PROGRESS BAR
+      this.progressBar_Starting();
+
+    this.bindForm.bucketId=bucketId;
+    this.bindForm.categoryId=this.productId;
+    this.bindForm.categoryHierarchyName="PRODUCT",
+    this.bindForm.fileTemplateName="IMAGE"
+    
+    this._uploadService.bindFileWithUrls(this.bindForm).subscribe
+    (data=>{
+
+       //SNACK BAR MESSAGE
+       this._snackbar_helper.
+       OpenSnackbar_verticalPosition_top_right("[ LINKING SUCCESS ]", "ok",2000);
+   //STARTING PROGRESS BAR
+     this.progressBar_Stop();
+    },
+    error=>{
+        this._snackbar_helper.
+        OpenSnackbar_verticalPosition_top_right("[ LINKING FAILED !! ]", "cancel",2000);
+
+        //STARTING PROGRESS BAR
+        this.progressBar_Stop();
+          
+    })
+  }
+
+
+  //Bind Videos
+  bindFileWithRootCategoryVideoUrl(bucketId:any)
+  {
+      //STARTING PROGRESS BAR
+      this.progressBar_Starting();
+
+    this.bindForm.bucketId=bucketId;
+    this.bindForm.categoryId=this.productId;
+    this.bindForm.categoryHierarchyName="PRODUCT",
+    this.bindForm.fileTemplateName="VIDEO"
+    
+    this._uploadService.bindFileWithUrls(this.bindForm).subscribe
+    (data=>{
+
+       //SNACK BAR MESSAGE
+       this._snackbar_helper.
+       OpenSnackbar_verticalPosition_top_right("[ LINKING SUCCESS ]", "ok",2000);
+   //STARTING PROGRESS BAR
+     this.progressBar_Stop();
+    },
+    error=>{
+        this._snackbar_helper.
+        OpenSnackbar_verticalPosition_top_right("[ LINKING FAILED !! ]", "cancel",2000);
+
+        //STARTING PROGRESS BAR
+        this.progressBar_Stop();
+          
+    })
+  }
+
+
+  checkingLinkingFile(fileUrl:any)
+  {
+   return true;
+   
+  }
   
   progressBar_Starting()
   {

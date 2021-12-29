@@ -33,7 +33,7 @@
                     <div *ngFor="let node of filterData; let i = index">
                       <div *ngIf="node.imageType == 'image/jpeg' ">
                          <div class="card"  class="card" style="max-width:12rem ;">
-    
+                          
                           <a href="#">
                             <img class="card-img-top" src="{{node.fileUrl}}" alt="Card image cap">
                           </a>
@@ -48,13 +48,13 @@
                               </a>
                             </div>
                             <div class="col-sm-4">
-                              <!-- <a class="nav-link cursor-pointer"  (click)="bindFileWithRootCategoryImageUrl(node.bucketId)">
+                              <a class="nav-link cursor-pointer"  (click)="bindFileWithProductImageUrl(node.bucketId)">
                                 <i class="fa fa-link text-primary" style="font-size:20px"></i>
-                              </a> -->
+                              </a>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-4" *ngIf="checkingLinkingFile(node.fileUrl)">
                               <a class="nav-link cursor-pointer" href="">
-                                <i class="fa fa-trash-o text-danger" style="font-size:20px"></i>
+                                <i class="fa fa-user-o text-danger" style="font-size:20px"></i>
                               </a>
                             </div>
                          </div>
@@ -96,9 +96,9 @@
                               </a>
                             </div>
                             <div class="col-sm-4">
-                              <!-- <a class="nav-link cursor-pointer" (click)="bindFileWithRootCategoryVideoUrl(node.bucketId)">
+                              <a class="nav-link cursor-pointer" (click)="bindFileWithRootCategoryVideoUrl(node.bucketId)">
                                 <i class="fa fa-link text-primary" style="font-size:20px"></i>
-                              </a> -->
+                              </a>
                             </div>
                             <div class="col-sm-4">
                               <a class="nav-link cursor-pointer" href="">
