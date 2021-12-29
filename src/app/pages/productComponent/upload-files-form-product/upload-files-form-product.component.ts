@@ -18,12 +18,12 @@ export class UploadFilesFormProductComponent implements OnInit {
     productId:any;
     files:any=FileList;
     filterData:any;
-    linkingNode:any=FileList;
+    linkingNode:any=[];
 
   ngOnInit(): void {
     this.productId = this._activateRouter.snapshot.params.productId;
     this.getProductFilesById();
-    this.getProductLinkingFilesByProductId();
+    //this.getProductLinkingFilesByProductId();
   
   }
 
@@ -94,6 +94,7 @@ export class UploadFilesFormProductComponent implements OnInit {
      this._uploadService.getGenericBucketFilesById(this.productId).subscribe(
        data=>{
              this.filterData=data;
+             console.log(this.filterData);
              
              //STOP PROGRESS BAR
              this.progressBar_Stop();
@@ -119,7 +120,8 @@ export class UploadFilesFormProductComponent implements OnInit {
       this._uploadService.getProductLinkingFilesByProductId(this.productId).subscribe(
         data=>{
               this.linkingNode = data;
-
+              console.log(this.linkingNode);
+              
               //STOP PROGRESS BAR
               this.progressBar_Stop();
         },
@@ -235,11 +237,52 @@ export class UploadFilesFormProductComponent implements OnInit {
   }
 
 
-  checkingLinkingFile(fileUrl:any)
+
+  setThumbNail(bucketId:any)
   {
-   return true;
-   
+  
+    
+    this._uploadService.setProductThumbNail(bucketId,this.productId).subscribe
+    (data=>{
+
+       //SNACK BAR MESSAGE
+       this._snackbar_helper.
+       OpenSnackbar_verticalPosition_top_right("[ SET THUMBNAIL SUCCESS ]", "ok",2000);
+   //STARTING PROGRESS BAR
+     this.progressBar_Stop();
+    },
+    error=>{
+        this._snackbar_helper.
+        OpenSnackbar_verticalPosition_top_right("[SET THUMBNAIL FAILED  ]", "cancel",2000);
+
+        //STARTING PROGRESS BAR
+        this.progressBar_Stop();
+          
+    })
   }
+//   singleNode:any;
+//   checkingLinkingFile(bucket_bId:any)
+//   {
+//     console.log(bucket_bId+"-----throu ID");
+    
+
+//     this.linkingNode.forEach( (element:any) => {
+//         console.log(element.bucketId+ "----Print id Linking node---");
+        
+//       if(bucket_bId === (element.bucketId))
+//       { 
+//        // console.log("equal Hain");
+        
+//        return true;
+//       }
+//       else{
+//       //  console.log("equal nahi hain");
+//        return false;
+//       }
+      
+//   });
+     
+// }
   
   progressBar_Starting()
   {

@@ -54,4 +54,11 @@ export class UploadFilesService {
     var url = this.auth_URL.authUrl+"bindFile";
     return this._http.put(url,bindForm);
   }
+
+
+  setProductThumbNail(bucketId:any,productId:any)
+  {
+    var url = this.auth_URL.authUrl+"setProductThumbNail/"+productId+"/"+bucketId;
+    return this._http.post(url,"");
+  }
 }
