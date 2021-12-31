@@ -14,7 +14,7 @@
             <div class="form-group col-md-12">
                 <label>Product Name</label>
                 <input  type="text" 
-                        required 
+                        required="required"
                         [(ngModel)]="addProduct.productName" name="productName"
                         class="form-control"
                         placeholder="Product Name">
@@ -32,7 +32,7 @@
                   <i class="fa fa-rupee"></i>
                 </div>
               </div>
-              <input type="text"
+              <input type="number"
                class="form-control"
                [(ngModel)]="addProduct.manufacturingPrice" name="manufacturingPrice"
                id="inlineFormInputGroupUsername"
@@ -49,7 +49,7 @@
                   <i class="fa fa-rupee"></i>
                 </div>
               </div>
-              <input type="text"
+              <input type="number"
                class="form-control"
                [(ngModel)]="addProduct.mrpPrice" name="mrpPrice"
                id="inlineFormInputGroupUsername"
@@ -65,7 +65,7 @@
                   <i class="fa fa-rupee"></i>
                 </div>
               </div>
-              <input type="text"
+              <input type="number"
                class="form-control"
                [(ngModel)]="addProduct.sellPrice" name="sellPrice"
                id="inlineFormInputGroupUsername"
@@ -76,6 +76,78 @@
         </div>
 
 
+
+        <div class="form-row">
+
+          <div class="col-sm-4 my-1">
+            <label>Product-Length</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-bookmark"></i>
+                </div>
+              </div>
+              <input type="number"
+               class="form-control"
+               [(ngModel)]="addProduct.productLength" name="productLength"
+               id="inlineFormInputGroupUsername"
+               placeholder="Product-Length">
+            </div>
+          </div>
+
+
+          <div class="col-sm-4 my-1">
+            <label>Product-Width</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-bookmark"></i>
+                </div>
+              </div>
+              <input  type="number"
+               class="form-control"
+               [(ngModel)]="addProduct.productWidth" name="productWidth"
+               id="inlineFormInputGroupUsername"
+               placeholder="Product-Width">
+            </div>
+          </div>
+
+          <div class="col-sm-4 my-1">
+            <label>Product-Height</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="fa fa-bookmark"></i>
+                </div>
+              </div>
+              <input type="number"
+               class="form-control"
+               [(ngModel)]="addProduct.productHeight" name="productHeight"
+               id="inlineFormInputGroupUsername"
+               placeholder="SELL-Price">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="my-1 mt-3 mb-4">
+          <label>Product-Weight</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-bookmark"></i>
+              </div>
+            </div>
+            <input type="number"
+             class="form-control"
+             [(ngModel)]="addProduct.productWeight" name="productWeight"
+             id="inlineFormInputGroupUsername"
+             placeholder="Product Weight">
+          </div>
+        </div>
+
+
+        
         <div class="my-1 mt-3 mb-4">
           <label>Quantity</label>
           <div class="input-group">
@@ -84,13 +156,105 @@
                 <i class="fa fa-database"></i>
               </div>
             </div>
-            <input type="text"
+            <input type="number"
              class="form-control"
              [(ngModel)]="addProduct.quantity" name="quantity"
              id="inlineFormInputGroupUsername"
              placeholder="Quantity">
           </div>
         </div>
+
+
+        <div class="form-row">
+
+          <div class="col-sm-2">
+            <div class="form-check">
+              <input class="form-check-input"
+                 [(ngModel)]="addProduct.sizeXS" 
+                 name="sizeXS" 
+                 type="checkbox" 
+                 value="" 
+                 id="flexCheckDefault">
+              <label class="form-check-label text-primary" for="flexCheckDefault">
+                   SIZE-XS
+              </label>
+            </div>
+          </div>
+
+
+          <div class="col-sm-2">
+            <div class="form-check">
+              <input class="form-check-input"
+                 [(ngModel)]="addProduct.sizeS" 
+                 name="sizeS" 
+                 type="checkbox" 
+                 value="" 
+                 id="flexCheckDefault">
+              <label class="form-check-label text-primary" for="flexCheckDefault">
+                   SIZE-S
+              </label>
+            </div>
+          </div>
+
+
+          <div class="col-sm-2">
+            <div class="form-check">
+              <input class="form-check-input"
+                 [(ngModel)]="addProduct.sizeM" 
+                 name="sizeM" 
+                 type="checkbox" 
+                 value="" 
+                 id="flexCheckDefault">
+              <label class="form-check-label text-primary" for="flexCheckDefault">
+                   SIZE-M
+              </label>
+            </div>
+          </div>
+
+
+          <div class="col-sm-2">
+            <div class="form-check">
+              <input class="form-check-input"
+                 [(ngModel)]="addProduct.sizeL" 
+                 name="sizeL" 
+                 type="checkbox" 
+                 value="" 
+                 id="flexCheckDefault">
+              <label class="form-check-label text-primary" for="flexCheckDefault">
+                   SIZE-L
+              </label>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="form-check">
+              <input class="form-check-input"
+                 [(ngModel)]="addProduct.sizeXL" 
+                 name="sizeXL" 
+                 type="checkbox" 
+                 value="" 
+                 id="flexCheckDefault">
+              <label class="form-check-label text-primary" for="flexCheckDefault">
+                   SIZE-XL
+              </label>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="form-check">
+              <input class="form-check-input"
+                 [(ngModel)]="addProduct.sizeXXL" 
+                 name="sizeXXL" 
+                 type="checkbox" 
+                 value="" 
+                 id="flexCheckDefault">
+              <label class="form-check-label text-primary" for="flexCheckDefault">
+                   SIZE-XXL
+              </label>
+            </div>
+          </div>
+
+          </div>
 
 
         <div class="form-row">

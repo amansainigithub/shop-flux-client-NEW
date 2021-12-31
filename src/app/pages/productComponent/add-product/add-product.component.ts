@@ -50,6 +50,16 @@ export class AddProductComponent implements OnInit {
     "shortDescription": "",
     "isEnabled":"",
     "subCategoryId": "",
+    "productHeight":"",
+    "productLength":"",
+    "productWidth":"",
+    "productWeight":"",
+    "sizeXS":"",
+    "sizeS":"",
+    "sizeM":"",
+    "sizeL":"",
+    "sizeXL":"",
+    "sizeXXL":"",
     productSubCategoryForm:
     {
       productSubCategoryId:""
