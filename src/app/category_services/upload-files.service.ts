@@ -61,4 +61,5 @@ export class UploadFilesService {
     var url = this.auth_URL.authUrl+"setProductThumbNail/"+productId+"/"+bucketId;
     return this._http.post(url,"");
   }
+
 }

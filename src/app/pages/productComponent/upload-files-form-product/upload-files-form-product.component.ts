@@ -27,6 +27,7 @@ export class UploadFilesFormProductComponent implements OnInit {
   
   }
 
+
   selectEvent(event:any)
   {
       this.files=event.target.files;
