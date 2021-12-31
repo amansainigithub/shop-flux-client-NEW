@@ -23,7 +23,7 @@ export class UploadFilesFormProductComponent implements OnInit {
   ngOnInit(): void {
     this.productId = this._activateRouter.snapshot.params.productId;
     this.getProductFilesById();
-    //this.getProductLinkingFilesByProductId();
+  //  this.getProductLinkingFilesByProductId();
   
   }
 

@@ -54,6 +54,7 @@ export class AddProductComponent implements OnInit {
     "productLength":"",
     "productWidth":"",
     "productWeight":"",
+    
     "sizeXS":"",
     "sizeS":"",
     "sizeM":"",
