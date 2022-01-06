@@ -90,6 +90,8 @@ export class UploadFileFormRootCatComponent implements OnInit {
     console.log(this.rootCategoryId);
     this._uploadService.getGenericBucketFilesById(this.rootCategoryId).subscribe(
       data=>{
+            console.log(data);
+            
             this.filterData=data;
             //STOP PROGRESS BAR
             this.progressBar_Stop();
