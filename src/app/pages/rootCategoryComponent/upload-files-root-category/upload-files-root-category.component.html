@@ -27,13 +27,8 @@
               <mat-slide-toggle  [(ngModel)]="rootData.rootCategoryStatus">
               </mat-slide-toggle>
 
-  
-              <!-- <td *ngIf="rootData.imageUrl==''">NULL OBJ</td> -->
-              <!-- <td *ngIf="!rootData.imageUrl==''">{{rootData.imageUrl}}</td> -->
-              <!-- <td *ngIf="rootData.videoUrl==''">NULL OBJ</td> -->
-              <td>NULL OBJ</td>
-              <td>NULL OBJ</td>
-              <!-- <td *ngIf="!rootData.videoUrl==''">{{rootData.videoUrl}}</td> -->
+              <td >{{rootData.imageUrl}}</td> 
+              <td>{{rootData.videoUrl}}</td>
 
               <td>
                 <a [routerLink]="'/dashboard/uploadFormRootCategoryFiles/'+rootData.productRootCategoryId" routerLinkActive="active">
