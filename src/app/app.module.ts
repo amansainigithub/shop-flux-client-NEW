@@ -39,6 +39,9 @@ import { ShowProductComponent } from './pages/productComponent/show-product/show
 import { UpdateProductComponent } from './pages/productComponent/update-product/update-product.component';
 import { UploadFilesProductComponent } from './pages/productComponent/upload-files-product/upload-files-product.component';
 import { UploadFilesFormProductComponent } from './pages/productComponent/upload-files-form-product/upload-files-form-product.component';
+import { BannerComponent } from './pages/banner/banner/banner.component';
+import { ShowBannerComponent } from './pages/banner/show-banner/show-banner.component';
+import { UploadBannerFileComponent } from './pages/banner/upload-banner-file/upload-banner-file.component';
 
 
 
@@ -72,6 +75,10 @@ import { UploadFilesFormProductComponent } from './pages/productComponent/upload
     UpdateProductComponent,
     UploadFilesProductComponent,
     UploadFilesFormProductComponent,
+    BannerComponent,
+    ShowBannerComponent,
+    UploadBannerFileComponent,
+    
     
     
     
