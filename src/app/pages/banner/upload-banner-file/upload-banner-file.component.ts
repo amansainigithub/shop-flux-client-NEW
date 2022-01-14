@@ -51,25 +51,21 @@ export class UploadBannerFileComponent implements OnInit {
 
       this._bannerService.uploadBannerFile(this.files[0],this.bannerId).subscribe
       (data=>{
-          console.log(data);
+         //SNACK BAR MESSAGE
+          this._snackbar_helper.
+          OpenSnackbar_verticalPosition_top_right("files upload success!!", "ok",2000);
+           //STOP PROGRESS BAR
+      this.progressBar_Stop();
           
       },
       error=>{
         this._snackbar_helper.
         OpenSnackbar_verticalPosition_top_right("files upload Failed!!", "cancel",2000);
-        
         //STOP PROGRESS BAR
       this.progressBar_Stop();
       return;
       
     });
-    
-    //SNACK BAR MESSAGE
-    this._snackbar_helper.
-    OpenSnackbar_verticalPosition_top_right("files upload success!!", "ok",2000);
-
-  //STOP PROGRESS BAR
-  this.progressBar_Stop();
   }
 
 progressBar_Starting()

@@ -9,7 +9,7 @@ import { SnackbarHelperService } from 'src/app/helper-msg/snackbar-helper.servic
 })
 export class ShowBannerComponent implements OnInit {
 
-  constructor(private _bannerService:BannerService) { }
+  constructor(private _bannerService:BannerService,private _snackbar_helper:SnackbarHelperService) { }
 
   bannerData:any=[];
 
@@ -29,15 +29,27 @@ export class ShowBannerComponent implements OnInit {
             console.log(error);
             
         }
-      )
+      );
   }
 
 
   deleteBannerById(bannerId:any)
-  {
-      console.log(bannerId);
-      
-      
+  { 
+    this._bannerService.deleteBannerById(bannerId).subscribe(
+      data=>{
+           //SHOW-MESSAGE
+       this._snackbar_helper.
+       OpenSnackbar_verticalPosition_top_right("[ DELETE SUCCESS ]", "ok",2000);
+
+        this.fetchBannerData();   
+      },
+      error=>{
+       //SHOW-MESSAGE
+       this._snackbar_helper.
+       OpenSnackbar_verticalPosition_top_right("[ DELETE FAILED ]", "cancle",2000);
+          
+      }
+    );
   }
 
 }

@@ -32,4 +32,10 @@ export class BannerService {
   }
 
 
+  deleteBannerById(bannerId:any)
+  {
+    return this.http.delete(this.auth_URL.authUrl+"deleteBannerById/"+bannerId);
+  }
+
+
 }

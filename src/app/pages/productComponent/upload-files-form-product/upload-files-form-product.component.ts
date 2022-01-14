@@ -58,7 +58,7 @@ export class UploadFilesFormProductComponent implements OnInit {
 
       this._uploadService.genericUploadFileService(this.files[i],this.productId,categoryTemplateName).subscribe
       (data=>{
-       
+        this.getProductFilesById();
       },
       error=>{
         this._snackbar_helper.
@@ -71,12 +71,7 @@ export class UploadFilesFormProductComponent implements OnInit {
     });
       
     }
-
-    //GET PRODUCT FILES
-    this.filterData=null;
-    this.getProductFilesById();
-
-
+    
     //SNACK BAR MESSAGE
     this._snackbar_helper.
     OpenSnackbar_verticalPosition_top_right("files upload success!!", "ok",2000);

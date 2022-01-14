@@ -35,34 +35,34 @@ export class BannerComponent implements OnInit {
 
   createBanner(){
     //Progress bar starting 
-     this.progressBar_Starting();
-
+    this.progressBar_Starting();
      this._bannerService.saveBannerService(this.bannerForm).subscribe
      (data=>{
           this._snackbar_helper.
           OpenSnackbar_verticalPosition_top_right("BANNER CREATED", "cancel",2000);
-          this.progressBar_Stop()
+          this.progressBar_Stop();
           return;
      },
      error=>{
             this._snackbar_helper.
             OpenSnackbar_verticalPosition_top_right(error.error.message, "cancel",2000);
-            this.progressBar_Stop()
+            this.progressBar_Stop();
             return;
 
      })
-
-     //STOP-PROGRESS_BAR
-     this.progressBar_Stop();
   }
 
   progressBar_Starting()
   {
+    console.log("STARTING");
+          
     this.progressBar.dynamicValue=true;
   }
 
   progressBar_Stop()
   {
+    console.log("ending");
+          
     this.progressBar.dynamicValue=false;
   }
 

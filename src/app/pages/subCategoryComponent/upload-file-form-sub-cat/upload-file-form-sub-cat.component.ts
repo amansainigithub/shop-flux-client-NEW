@@ -30,7 +30,7 @@ progressBar:any ={
   selectEvent(event:any)
   {
       this.files=event.target.files;
-      console.log(this.files);
+     // console.log(this.files);
       
   }
 
@@ -49,14 +49,11 @@ progressBar:any ={
       return;
     }
 
-
     for (let i = 0; i < this.files.length; i++) {
 
       this._uploadService.genericUploadFileService(this.files[i],this.subCategoryId,categoryTemplateName).subscribe
       (data=>{
-       
-      console.log(data);
-      
+        this.getSubCategoryFilesById();
       },
       error=>{
         this._snackbar_helper.
@@ -69,9 +66,6 @@ progressBar:any ={
     });
       
     }
-
-    this.filterData=null;
-      this.files=this.getSubCategoryFilesById();
 
     //SNACK BAR MESSAGE
     this._snackbar_helper.
@@ -161,11 +155,14 @@ item:any;
     this._uploadService.bindFileWithUrls(this.bindForm).subscribe
     (data=>{
 
-       //SNACK BAR MESSAGE
+       //SHOW-MESSAGE
        this._snackbar_helper.
        OpenSnackbar_verticalPosition_top_right("[ LINKING SUCCESS ]", "ok",2000);
    //STARTING PROGRESS BAR
      this.progressBar_Stop();
+
+     //FWTCH SUB-CATEGORY-LIST  
+     this.getSubCategoryFilesById();
     },
     error=>{
         this._snackbar_helper.

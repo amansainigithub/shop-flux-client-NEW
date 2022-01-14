@@ -55,8 +55,7 @@ export class UploadFileFormRootCatComponent implements OnInit {
 
       this._uploadService.genericUploadFileService(this.files[i],this.rootCategoryId,categoryTemplateName).subscribe
       (data=>{
-       
-      console.log(data);
+        this.getRootCategoryFilesById();
       },
       error=>{
         this._snackbar_helper.
@@ -75,9 +74,11 @@ export class UploadFileFormRootCatComponent implements OnInit {
 
   //STOP PROGRESS BAR
   this.progressBar_Stop();
-
-
   }
+
+
+
+
 
   //************GET FILES BY ID */
   getRootCategoryFilesById()
@@ -161,8 +162,11 @@ export class UploadFileFormRootCatComponent implements OnInit {
        //SNACK BAR MESSAGE
        this._snackbar_helper.
        OpenSnackbar_verticalPosition_top_right("[ LINKING SUCCESS ]", "ok",2000);
+       
    //STARTING PROGRESS BAR
      this.progressBar_Stop();
+     //Fetching Root-Cate DATA
+     this.getRootCategoryFilesById()
     },
     error=>{
         this._snackbar_helper.
