@@ -62,4 +62,13 @@ export class UploadFilesService {
     return this._http.post(url,"");
   }
 
+
+
+  removeLinking(bindForm:any)
+  {
+    var url = this.auth_URL.authUrl+"removeFileLinking";
+    return this._http.put(url,bindForm);
+  }
+
+
 }

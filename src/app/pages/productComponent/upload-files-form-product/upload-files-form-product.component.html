@@ -39,25 +39,30 @@
                             <img class="card-img-top" src="{{node.fileUrl}}" alt="Card image cap">
                           </a>
                       <div class="card-body p-2">
-                         <div class="row mr-2">
-                            <div class="col-sm-3">
+                         <div class="row ">
+                            <div class="col-sm-2">
                               <a  class="nav-link cursor-pointer"  (click)="deleteFileByBucketId(node.bucketId)" >
                                 <i  class="fa fa-trash-o text-danger" style="font-size:20px"></i>
                               </a>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                               <a class="nav-link cursor-pointer"  (click)="bindFileWithProductImageUrl(node.bucketId)">
                                 <i class="fa fa-link text-primary" style="font-size:20px"></i>
                               </a>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                               <a class="nav-link cursor-pointer"  (click)="setThumbNail(node.bucketId)">
-                                <i class="	fa fa-file-photo-o text-danger" style="font-size:20px"> </i>
+                                <i class="fa fa-file-photo-o text-danger" style="font-size:20px"> </i>
                               </a>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                               <a class="nav-link cursor-pointer"  (click)="setThumbNail(node.bucketId)">
-                                <i class="	fa fa-circle Blink" style="font-size:10px;color:chartreuse ;"></i>
+                                <i class="fa fa-circle Blink" style="font-size:10px;color:chartreuse ;"></i>
+                              </a>
+                            </div>
+                            <div class="col-sm-2">
+                              <a class="nav-link cursor-pointer"  (click)="removeLinking(node.bucketId,'PRODUCT')">
+                                <i class="fa fa-chain-broken" style="font-size:18px;color:red ;"></i>
                               </a>
                             </div>
                          </div>

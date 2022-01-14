@@ -188,8 +188,12 @@ export class UploadFilesFormProductComponent implements OnInit {
        //SNACK BAR MESSAGE
        this._snackbar_helper.
        OpenSnackbar_verticalPosition_top_right("[ LINKING SUCCESS ]", "ok",2000);
-   //STARTING PROGRESS BAR
-     this.progressBar_Stop();
+
+        //FETCHING DATA
+        this.getProductFilesById();
+
+        //STARTING PROGRESS BAR
+          this.progressBar_Stop();
     },
     error=>{
         this._snackbar_helper.
@@ -219,8 +223,12 @@ export class UploadFilesFormProductComponent implements OnInit {
        //SNACK BAR MESSAGE
        this._snackbar_helper.
        OpenSnackbar_verticalPosition_top_right("[ LINKING SUCCESS ]", "ok",2000);
-   //STARTING PROGRESS BAR
-     this.progressBar_Stop();
+
+       //FETCHING DATA
+       this.getProductFilesById();
+
+        //STARTING PROGRESS BAR
+        this.progressBar_Stop();
     },
     error=>{
         this._snackbar_helper.
@@ -256,6 +264,42 @@ export class UploadFilesFormProductComponent implements OnInit {
           
     })
   }
+  // } bindForm={
+//   "bucketId":"",
+//   "categoryId":"",
+//   "categoryHierarchyName":"",
+//   "fileTemplateName":""
+// }
+
+  removeLinking(bucketId:any,categoryHierarchyName:any)
+  { 
+    this.bindForm.bucketId = bucketId;
+    this.bindForm.categoryHierarchyName=categoryHierarchyName;
+
+   
+    this._uploadService.removeLinking(this.bindForm).subscribe
+    (data=>{
+
+       //SNACK BAR MESSAGE
+       this._snackbar_helper.
+       OpenSnackbar_verticalPosition_top_right("[ REMOVE LINKING SUCCESS ]", "ok",2000);
+
+       //Fetching Data
+       this.getProductFilesById();
+
+   //STARTING PROGRESS BAR
+     this.progressBar_Stop();
+    },
+    error=>{
+        this._snackbar_helper.
+        OpenSnackbar_verticalPosition_top_right("[REMOVE LINKING FAILED !! ]", "cancel",2000);
+
+        //STARTING PROGRESS BAR
+        this.progressBar_Stop();
+          
+    })
+  }
+
 //   singleNode:any;
 //   checkingLinkingFile(bucket_bId:any)
 //   {
