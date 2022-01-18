@@ -14,8 +14,9 @@
                 <th scope="col">QUANTITY</th>
                 <th scope="col">SELL-P</th>
                 <th scope="col">DISCOUNT</th>
+                <th scope="col">FILES</th>
                 <th scope="col">STATUS</th>
-                <th scope="col">LINK-IMAGES</th>
+                <!-- <th scope="col">LINK-IMAGES</th> -->
 
     
               </tr>
@@ -42,6 +43,16 @@
                         <i class="fa fa-link text-primary cursor-pointer text-decoration-none ml-4" style="font-size:16px"></i>
                   </a>
                 </td>
+
+                <!-- <div >
+                  <td *ngFor="let node of item.productFileUrls; let i = index" >
+
+                    <tr>
+                      <th><img src="{{node.fileUrl}}" alt="" class="rounded-circle" height="30" width="30"></th>
+                    </tr>
+                  
+                  </td>
+                </div> -->
 
     
               </tr>

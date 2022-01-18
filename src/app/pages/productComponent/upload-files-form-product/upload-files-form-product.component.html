@@ -41,27 +41,27 @@
                       <div class="card-body p-2">
                          <div class="row ">
                             <div class="col-sm-2">
-                              <a  class="nav-link cursor-pointer"  (click)="deleteFileByBucketId(node.bucketId)" >
+                              <a  class="cursor-pointer"  (click)="deleteFileByBucketId(node.bucketId)" >
                                 <i  class="fa fa-trash-o text-danger" style="font-size:20px"></i>
                               </a>
                             </div>
                             <div class="col-sm-2">
-                              <a class="nav-link cursor-pointer"  (click)="bindFileWithProductImageUrl(node.bucketId)">
+                              <a class="cursor-pointer"  (click)="bindFileWithProductImageUrl(node.bucketId)">
                                 <i class="fa fa-link text-primary" style="font-size:20px"></i>
                               </a>
                             </div>
                             <div class="col-sm-2">
-                              <a class="nav-link cursor-pointer"  (click)="setThumbNail(node.bucketId)">
+                              <a class="cursor-pointer"  (click)="setThumbNail(node.bucketId)">
                                 <i class="fa fa-file-photo-o text-danger" style="font-size:20px"> </i>
                               </a>
                             </div>
                             <div class="col-sm-2">
-                              <a class="nav-link cursor-pointer"  (click)="setThumbNail(node.bucketId)">
+                              <a class="cursor-pointer"  (click)="setThumbNail(node.bucketId)">
                                 <i class="fa fa-circle Blink" style="font-size:10px;color:chartreuse ;"></i>
                               </a>
                             </div>
                             <div class="col-sm-2">
-                              <a class="nav-link cursor-pointer"  (click)="removeLinking(node.bucketId,'PRODUCT')">
+                              <a class="cursor-pointer"  (click)="removeLinking(node.bucketId,'PRODUCT')">
                                 <i class="fa fa-chain-broken" style="font-size:18px;color:red ;"></i>
                               </a>
                             </div>
@@ -78,21 +78,21 @@
                         <a href="#">
                           <img class="card-img-top" src="{{node.fileUrl}}" alt="Card image cap">
                         </a>
-                    <div class="card-body p-2">
-                       <div class="row mr-2">
-                          <div class="col-sm-4">
-                            <a  class="nav-link cursor-pointer"  (click)="deleteFileByBucketId(node.bucketId)" >
-                              <i  class="fa fa-trash-o text-danger" style="font-size:20px"></i>
+                    <div class="card-body">
+                       <div class="row">
+                          <div class="col-md-4" style="margin: auto;">
+                            <a  class="cursor-pointer"  (click)="deleteFileByBucketId(node.bucketId)" >
+                              <i  class="fa fa-trash-o text-danger"  style="font-size:20px;"></i>
                             </a>
                           </div>
-                          <div class="col-sm-4">
-                            <a class="nav-link cursor-pointer"  (click)="bindFileWithProductImageUrl(node.bucketId)">
+                          <div class="col-md-4 ">
+                            <a class="cursor-pointer"  (click)="bindFileWithProductImageUrl(node.bucketId)">
                               <i class="fa fa-link text-primary" style="font-size:20px"></i>
                             </a>
                           </div>
-                          <div class="col-sm-4">
-                            <a class="nav-link cursor-pointer"  (click)="setThumbNail(node.bucketId)">
-                              <i class="	fa fa-file-photo-o text-danger" style="font-size:20px"> </i>
+                          <div class="col-md-4">
+                            <a class=" cursor-pointer"  (click)="setThumbNail(node.bucketId)">
+                              <i class="	fa fa-file-photo-o text-danger" style="font-size:20px"></i>
                             </a>
                           </div>
                        </div>
@@ -100,8 +100,6 @@
                       </div>
                         <!-- CARD ENDING -->
                        </div>
-
-
                      </div>
                   </div>
                 </div>
@@ -118,8 +116,9 @@
                 <div class="row">
     
                   <div *ngFor="let node of filterData; let i = index" >
-                    <div *ngIf="node.imageType == 'video/mp4' ">
-                      
+
+                     <!-- CARD-STARTING  -->
+                    <div *ngIf="node.imageType == 'video/mp4'  ">
                     <div class="col-sm-4 p-1" >
                       <div class="card" style="width: 11rem;" >
     
@@ -129,26 +128,69 @@
       
                         <div class="card-body">
                           <div class="row mr-2">
-                            <div class="col-sm-4">
+                            <div class="col-sm-6">
                               <a  class="nav-link cursor-pointer"  (click)="deleteFileByBucketId(node.bucketId)" >
                                 <i  class="fa fa-trash-o text-danger" style="font-size:20px"></i>
                               </a>
                             </div>
-                            <div class="col-sm-4">
+                            <!-- <div class="col-sm-4">
                               <a class="nav-link cursor-pointer" (click)="bindFileWithRootCategoryVideoUrl(node.bucketId)">
                                 <i class="fa fa-link text-primary" style="font-size:20px"></i>
                               </a>
-                            </div>
-                            <div class="col-sm-4">
-                              <a class="nav-link cursor-pointer"  (click)="setThumbNail(node.bucketId)">
-                                <i class="	fa fa-file-photo-o text-danger" style="font-size:20px"></i>
+                            </div> -->
+                            <div class="col-sm-6">
+                              <a class="nav-link cursor-pointer" alt="tttttttttttt"  (click)="setThumbNail(node.bucketId)">
+                                <i class="	fa fa-file-photo-o text-success" style="font-size:20px"></i>
                               </a>
                             </div>  
                          </div>
                         </div>
                        </div>
                       </div>
+                      </div>
+                       <!-- CARD-ENDING  -->
+
+                       <!-- CARD STARTING -->
+                       <!-- <div *ngIf="node.imageType == 'video/mp4' && node.isLinking === 'YES'">
+                     <div class="card"  class="card" style="max-width:12rem ;">
+                      <video class="" height="120" width="176" controls>
+                        <source src="{{node.fileUrl}}" type="video/mp4">
+                      </video>
+                  <div class="card-body p-2">
+                     <div class="row ">
+                        <div class="col-sm-2">
+                          <a  class="cursor-pointer"  (click)="deleteFileByBucketId(node.bucketId)" >
+                            <i  class="fa fa-trash-o text-danger" style="font-size:20px"></i>
+                          </a>
+                        </div>
+                        <div class="col-sm-2">
+                          <a class="cursor-pointer"  (click)="bindFileWithProductImageUrl(node.bucketId)">
+                            <i class="fa fa-link text-primary" style="font-size:20px"></i>
+                          </a>
+                        </div>
+                        <div class="col-sm-2">
+                          <a class="cursor-pointer">
+                            <i class="fa fa-file-photo-o text-danger" style="font-size:20px"> </i>
+                          </a>
+                        </div>
+                        <div class="col-sm-2">
+                          <a class="cursor-pointer">
+                            <i class="fa fa-circle Blink" style="font-size:10px;color:chartreuse ;"></i>
+                          </a>
+                        </div>
+                        <div class="col-sm-2">
+                          <a class="cursor-pointer"  (click)="removeLinking(node.bucketId,'PRODUCT')">
+                            <i class="fa fa-chain-broken" style="font-size:18px;color:red ;"></i>
+                          </a>
+                        </div>
+                     </div>
                     </div>
+                    </div>
+                  </div>  -->
+                      <!-- CARD ENDING -->
+                  
+
+
                   </div>
     
                 </div>

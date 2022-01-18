@@ -23,6 +23,8 @@ export class UploadFilesProductComponent implements OnInit {
   {
       this._productService.getProductList().subscribe(data=>{
          this.productList=data;
+        //  console.log(data);
+         
       },
       error=>{
           console.log(error);
