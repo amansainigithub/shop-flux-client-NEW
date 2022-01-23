@@ -94,26 +94,37 @@
   
   
           <div class="form-row">
-          <div class="col-sm-4 my-1 mt-3 mb-4">
-            <label>SUB-CATEGORY</label>
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <i class="fa fa-database"></i>
+            <div class="col-sm-8 my-1 mt-3 mb-4">
+              <label>FINAL-CATEGORY</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa fa-database"></i>
+                  </div>
                 </div>
+    
+                <select name="finalCategoryId"  [(ngModel)]="selectedFinalCategoryId" class="custom-select" id="inlineFormCustomSelectPref">
+                  <option selected disabled>Choose...</option>
+                  <option *ngFor="let item of finalCategoryList"
+                          [ngValue]="item.productFinalCategoryId">
+
+                          <div>
+                            {{item.productFinalCategoryId}} = {{item.finalCategoryName}} 
+                            [SUB=>]{{item.productSubCategoryForm.subCategoryName}}
+                            [ROOT=>]{{item.productSubCategoryForm.productRootCategoryForm.rootCategoryName}}
+                          </div>
+
+                          <div *ngIf="item.finalCategoryName === productData.productFinalCategoryForm.finalCategoryName">
+                            <option selected>[SELECTED] </option>
+                          </div>
+      
+                  </option>
+                </select>
+    
               </div>
-  
-              <select name="subCategoryId"  [(ngModel)]="selectedSubCategoryId" class="custom-select" id="inlineFormCustomSelectPref">
-                <option selected disabled>Choose...</option>
-                <option *ngFor="let item of subCategoryList"
-                        [ngValue]="item.productSubCategoryId">
-                        {{item.productSubCategoryId}} = {{item.subCategoryName}}
-                </option>
-              </select>
-  
             </div>
-          </div>
-         </div>
+            
+           </div>
 
          <div class="form-group">
           <mat-slide-toggle name="isEnabled" [(ngModel)]="productData.enabled">

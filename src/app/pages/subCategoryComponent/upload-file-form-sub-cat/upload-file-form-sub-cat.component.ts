@@ -125,9 +125,6 @@ item:any;
         //STARTING PROGRESS BAR
         this.progressBar_Stop();
       });
-
-     
-   
   }
 
 

@@ -45,7 +45,7 @@ export class UpdateSubCategoryComponent implements OnInit {
     this._subCategoryService.getRootCategoryList().subscribe(
       data=>{
             this.rootCategoryData=data;
-            console.log(this.getRootCategoryList);
+            console.log(this.rootCategoryData);
             
       },
       error=>
@@ -62,9 +62,8 @@ export class UpdateSubCategoryComponent implements OnInit {
       this._subCategoryService.getSubCategoryById(subCategoryId).subscribe
       (data=>{
         this.updateSubCategoryData=data;
-        console.log();
-        
-        console.log(this.updateSubCategoryData);
+        // console.log("******************SUB-CATEGORY-ID*****************");
+        // console.log(this.updateSubCategoryData);
         
       },
       error=>{
@@ -76,9 +75,7 @@ export class UpdateSubCategoryComponent implements OnInit {
 
 updateSubCategory()
 { 
-  console.log(this.selectedRootCategoryId);
-  
-
+  // console.log(this.selectedRootCategoryId);
  //Progress bar starting 
  this.progressBar_Starting();
 
@@ -109,7 +106,7 @@ updateSubCategory()
     data => {
       this._snackbar_helper.
       OpenSnackbar_verticalPosition_top_right("update successfully !", "ok",2000);
-
+      
        //Progress bar stop 
        this.progressBar_Stop()
 

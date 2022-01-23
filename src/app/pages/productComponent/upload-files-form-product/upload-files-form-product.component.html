@@ -40,32 +40,51 @@
                           </a>
                       <div class="card-body p-2">
                          <div class="row ">
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                               <a  class="cursor-pointer"  (click)="deleteFileByBucketId(node.bucketId)" >
                                 <i  class="fa fa-trash-o text-danger" style="font-size:20px"></i>
                               </a>
                             </div>
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                               <a class="cursor-pointer"  (click)="bindFileWithProductImageUrl(node.bucketId)">
                                 <i class="fa fa-link text-primary" style="font-size:20px"></i>
                               </a>
                             </div>
-                            <div class="col-sm-2">
+                            <!-- <div class="col-sm-2">
                               <a class="cursor-pointer"  (click)="setThumbNail(node.bucketId)">
                                 <i class="fa fa-file-photo-o text-danger" style="font-size:20px"> </i>
                               </a>
-                            </div>
-                            <div class="col-sm-2">
+                            </div> -->
+                            <div class="col-sm-3">
                               <a class="cursor-pointer"  (click)="setThumbNail(node.bucketId)">
                                 <i class="fa fa-circle Blink" style="font-size:10px;color:chartreuse ;"></i>
                               </a>
                             </div>
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                               <a class="cursor-pointer"  (click)="removeLinking(node.bucketId,'PRODUCT')">
                                 <i class="fa fa-chain-broken" style="font-size:18px;color:red ;"></i>
                               </a>
                             </div>
                          </div>
+
+                         <!-- SET MAIN PAGE THUMBNAIL -->
+                         <div class="row mt-1">
+                           <div class="col-sm-12">
+                            <button class="btn-block btn-sm setMainThumbnail" (click)="setMainPageThumbnail(node.bucketId)" mat-raised-button color="primary">
+                              <i class="fa fa-photo fontSize11" ></i>
+                              SET MAIN THUMBNAIL
+                            </button>
+                           </div>
+
+                           <div class="col-sm-12">
+                            <button class="btn-block btn-sm setMainThumbnail" (click)="setThumbNail(node.bucketId)" mat-raised-button color="accent">
+                              <i class="fa fa-photo fontSize11"></i>
+                              PRODUCT-THUMBNAIL
+                            </button>
+                           </div>
+                         </div>
+                           <!-- SET MAIN PAGE THUMBNAIL ENDING  -->
+
                         </div>
                         </div>
                           <!-- CARD ENDING -->

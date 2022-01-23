@@ -29,6 +29,11 @@ import { UploadFilesFormProductComponent } from './pages/productComponent/upload
 import { BannerComponent } from './pages/banner/banner/banner.component';
 import { ShowBannerComponent } from './pages/banner/show-banner/show-banner.component';
 import { UploadBannerFileComponent } from './pages/banner/upload-banner-file/upload-banner-file.component';
+import { FinalCategoryComponent } from './pages/finalCategoryComponent/final-category/final-category.component';
+import { ShowFinalCategoryComponent } from './pages/finalCategoryComponent/show-final-category/show-final-category.component';
+import { UpdateFinalCategoryComponent } from './pages/finalCategoryComponent/update-final-category/update-final-category.component';
+import { UploadFilesFinalCategoryComponent } from './pages/finalCategoryComponent/upload-files-final-category/upload-files-final-category.component';
+import { UploadFilesFormFinalCatComponent } from './pages/finalCategoryComponent/upload-files-form-final-cat/upload-files-form-final-cat.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -60,6 +65,11 @@ const routes: Routes = [
               { path: 'banner', component:BannerComponent },
               { path: 'showBanner', component:ShowBannerComponent },
               { path: 'uploadBannerFile/:bannerId', component:UploadBannerFileComponent },
+              { path: 'createFinalCategory', component:FinalCategoryComponent },
+              { path: 'showFinalCategory', component:ShowFinalCategoryComponent },
+              { path: 'updateFinalCategory/:finalCategoryId', component: UpdateFinalCategoryComponent},
+              { path: 'uploadFilesFinalCategory', component: UploadFilesFinalCategoryComponent},
+              { path: 'uploadFormFinalCategoryFiles/:finalCategoryId', component: UploadFilesFormFinalCatComponent},
 
 
             ]

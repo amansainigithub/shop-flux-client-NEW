@@ -6,3 +6,9 @@
   from { opacity: 1; }
   to { opacity: 0; }
 }
+
+.setMainThumbnail
+{
+  font-size: 10px;
+  margin-top: 2px;
+}

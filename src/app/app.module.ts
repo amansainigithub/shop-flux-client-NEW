@@ -42,6 +42,11 @@ import { UploadFilesFormProductComponent } from './pages/productComponent/upload
 import { BannerComponent } from './pages/banner/banner/banner.component';
 import { ShowBannerComponent } from './pages/banner/show-banner/show-banner.component';
 import { UploadBannerFileComponent } from './pages/banner/upload-banner-file/upload-banner-file.component';
+import { FinalCategoryComponent } from './pages/finalCategoryComponent/final-category/final-category.component';
+import { ShowFinalCategoryComponent } from './pages/finalCategoryComponent/show-final-category/show-final-category.component';
+import { UpdateFinalCategoryComponent } from './pages/finalCategoryComponent/update-final-category/update-final-category.component';
+import { UploadFilesFinalCategoryComponent } from './pages/finalCategoryComponent/upload-files-final-category/upload-files-final-category.component';
+import { UploadFilesFormFinalCatComponent } from './pages/finalCategoryComponent/upload-files-form-final-cat/upload-files-form-final-cat.component';
 
 
 
@@ -78,6 +83,11 @@ import { UploadBannerFileComponent } from './pages/banner/upload-banner-file/upl
     BannerComponent,
     ShowBannerComponent,
     UploadBannerFileComponent,
+    FinalCategoryComponent,
+    ShowFinalCategoryComponent,
+    UpdateFinalCategoryComponent,
+    UploadFilesFinalCategoryComponent,
+    UploadFilesFormFinalCatComponent,
     
     
     

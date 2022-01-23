@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FinalCategoryService } from 'src/app/category_services/final-category.service';
 import { ProductService } from 'src/app/category_services/product.service';
 import { SubCategoryService } from 'src/app/category_services/sub-category.service';
 import { SnackbarHelperService } from 'src/app/helper-msg/snackbar-helper.service';
@@ -16,7 +17,7 @@ export class AddProductComponent implements OnInit {
     private _snackbar : MatSnackBar,
     private _productService:ProductService,
     private _snackbar_helper:SnackbarHelperService,
-    private _sub_category:SubCategoryService ) { }
+    private _final_category_service:FinalCategoryService ) { }
   
   progressBar:any ={
     dynamicValue:false
@@ -50,6 +51,7 @@ export class AddProductComponent implements OnInit {
     "shortDescription": "",
     "isEnabled":"",
     "subCategoryId": "",
+    "finalCategoryId": "",
     "productHeight":"",
     "productLength":"",
     "productWidth":"",
@@ -61,26 +63,25 @@ export class AddProductComponent implements OnInit {
     "sizeL":"",
     "sizeXL":"",
     "sizeXXL":"",
-    productSubCategoryForm:
+    productFinalCategoryForm:
     {
-      productSubCategoryId:""
+      productFinalCategoryId:""
     }
   }
 
-  subCategoryList:any ;
-  selectedSubCategoryId:number =0;
+  finalCategoryList:any ;
+  selectedFinalCategoryId:number =0;
   ngOnInit(): void {
-   this._sub_category.reteriveSubCategoryList().subscribe(
+   this._final_category_service.reteriveFinalCategoryList().subscribe(
      data=>{
-          this.subCategoryList =data;
+          this.finalCategoryList =data;
+          console.log(this.finalCategoryList);
           
      },
      error =>{
           console.log(error);
-          
      }
    )
-  
   }
 
   saveProduct()
@@ -88,7 +89,7 @@ export class AddProductComponent implements OnInit {
      //Progress bar starting 
      this.progressBar_Starting();
 
-     if(this.selectedSubCategoryId == null || this.selectedSubCategoryId == undefined)
+     if(this.selectedFinalCategoryId == null || this.selectedFinalCategoryId == undefined)
      {
        this._snackbar_helper.
          OpenSnackbar_verticalPosition_top_right("Something went wrong !!", "cancel",2000);
@@ -96,7 +97,10 @@ export class AddProductComponent implements OnInit {
           return ;
      }
 
-     this.addProduct.productSubCategoryForm.productSubCategoryId=this.selectedSubCategoryId;
+     this.addProduct.productFinalCategoryForm.productFinalCategoryId=this.selectedFinalCategoryId;
+
+     console.log(this.addProduct);
+     
 
      this._productService.saveRootCategory(this.addProduct).subscribe
      (data=>{

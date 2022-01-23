@@ -62,7 +62,11 @@ export class UploadFilesService {
     return this._http.post(url,"");
   }
 
-
+  setMainPageThumbnail(bucketId:any,productId:any)
+  {
+    var url = this.auth_URL.authUrl+"setThumbNailMainPage/"+productId+"/"+bucketId;
+    return this._http.post(url,"");
+  }
 
   removeLinking(bindForm:any)
   {

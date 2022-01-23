@@ -264,6 +264,30 @@ export class UploadFilesFormProductComponent implements OnInit {
           
     })
   }
+
+  //SET MAIN PAGE THUMBNAIL IMAGE
+  setMainPageThumbnail(bucketId:any)
+  {
+  
+    
+    this._uploadService.setMainPageThumbnail(bucketId,this.productId).subscribe
+    (data=>{
+
+       //SNACK BAR MESSAGE
+       this._snackbar_helper.
+       OpenSnackbar_verticalPosition_top_right("[ SET THUMBNAIL SUCCESS ]", "ok",2000);
+   //STARTING PROGRESS BAR
+     this.progressBar_Stop();
+    },
+    error=>{
+        this._snackbar_helper.
+        OpenSnackbar_verticalPosition_top_right("[SET THUMBNAIL FAILED  ]", "cancel",2000);
+
+        //STARTING PROGRESS BAR
+        this.progressBar_Stop();
+          
+    })
+  }
   // } bindForm={
 //   "bucketId":"",
 //   "categoryId":"",

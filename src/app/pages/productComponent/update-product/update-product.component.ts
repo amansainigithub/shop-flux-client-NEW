@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FinalCategoryService } from 'src/app/category_services/final-category.service';
 import { ProductService } from 'src/app/category_services/product.service';
 import { SubCategoryService } from 'src/app/category_services/sub-category.service';
 import { SnackbarHelperService } from 'src/app/helper-msg/snackbar-helper.service';
@@ -14,12 +15,12 @@ export class UpdateProductComponent implements OnInit {
   constructor(private _activateRouter:ActivatedRoute,
     private productService:ProductService,
     private _snackbar_helper:SnackbarHelperService,
-    private _sub_category:SubCategoryService) { }
+    private _final_category_service:FinalCategoryService) { }
 
     productId:any=0;
     productData:any;
-    subCategoryList:any ;
-    selectedSubCategoryId:number =0;
+    finalCategoryList:any ;
+    selectedFinalCategoryId:number =0;
 
     progressBar:any ={
       dynamicValue:false
@@ -36,10 +37,10 @@ export class UpdateProductComponent implements OnInit {
     this.getProductById(this.productId);
 
 
-    this._sub_category.reteriveSubCategoryList().subscribe(
+    this._final_category_service.reteriveFinalCategoryList().subscribe(
       data=>{
-           this.subCategoryList =data;
-           
+           this.finalCategoryList =data;
+           console.log(this.finalCategoryList);  
       },
       error =>{
            console.log(error);
@@ -71,7 +72,7 @@ export class UpdateProductComponent implements OnInit {
 
  
 
- if(this.selectedSubCategoryId == null || this.selectedSubCategoryId == undefined)
+ if(this.selectedFinalCategoryId == null || this.selectedFinalCategoryId == undefined)
  {
    this._snackbar_helper.
      OpenSnackbar_verticalPosition_top_right("Something went wrong !!", "cancel",2000);
@@ -79,13 +80,14 @@ export class UpdateProductComponent implements OnInit {
       return ;
  }
 
- this.productData.productSubCategoryForm.productSubCategoryId=this.selectedSubCategoryId;
+ this.productData.productFinalCategoryForm.productFinalCategoryId=this.selectedFinalCategoryId;
 
  this.productService.saveRootCategory(this.productData).subscribe
  (data=>{
       this._snackbar_helper.
       OpenSnackbar_verticalPosition_top_right("update product success", "cancel",2000);
       this.progressBar_Stop()
+      this.productData=data;
       return;
  },
  error=>{

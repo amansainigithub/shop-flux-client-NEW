@@ -1,0 +1,40 @@
+
+<div class="container mt-4 shadow-sm p-3">
+    <h5 class="text-dark">SUB CATEGORY LIST</h5>
+      <table class="table table-sm table-hover table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">FINAL-cat-Name</th>
+              <th scope="col">desc</th>
+              <th scope="col">short-desc</th>
+              <th scope="col">long-desc</th>
+              <th scope="col">status</th>
+             
+              <th scope="col">update</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of finalCategoryData; let i = index" >
+              <th scope="row">{{i}}</th>
+              <td>{{data.finalCategoryName}}</td>
+              <td>{{data.description}}</td>
+              <td>{{data.shortDescription}}</td>
+              <td>{{data.longDescription}}</td>
+  
+              <mat-slide-toggle  [(ngModel)]="data.finalCategoryStatus">
+              </mat-slide-toggle>
+  
+              <td>
+              <a [routerLink]="'/dashboard/updateFinalCategory/'+data.productFinalCategoryId" routerLinkActive="active">
+                    <i class="fa fa-pencil-square-o text-primary cursor-pointer text-decoration-none" style="font-size:16px"></i>
+              </a>
+            </td>
+  
+  
+            </tr>
+           
+          </tbody>
+        </table>
+  
+  </div>
