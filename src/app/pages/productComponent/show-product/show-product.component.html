@@ -5,12 +5,13 @@
 
         <table class="table table-hover" style="font-size: 10px;">
             <thead>
-              <tr class="text-primary">
+              <tr class="text-primary text-center">
                 <th scope="col">#</th>
                 <th scope="col">P-ID</th>
-                <th scope="col">MAIN-THUMB</th>
+                <th scope="col">MAIN_THUMB</th>
+                <!-- <th scope="col">PRODUCT_THUMB</th> -->
                 <th scope="col">PRODUCT</th>
-                <th scope="col">MANU-PRICE</th>
+                <th scope="col">MAIN_PRICE</th>
                 <th scope="col">MRP</th>
                 <th scope="col">QUANTITY</th>
                 <th scope="col">SELL-P</th>
@@ -27,16 +28,28 @@
                 <td>{{item.productId}}</td>
 
                 <td>
-                      <div *ngIf="item.thumbnailUrl != null ">
-                        <div class="card-body" style="max-width: 110px;">
-                          <img 
+                  <div *ngIf="item.thumbnailUrl != null ">
+                    <div class="card-body" style="max-width: 110px;">
+                      <img 
+                        class="card-img-top" 
+                        src="{{item.thumbnailUrl}}" 
+                        alt="Card image cap">
+                    </div>
+                  
+              </div>
+            </td>
+
+                <!-- <td>
+                    <div  *ngFor="let file of item.productFileUrls" class="card-body " style="max-width: 110px;">
+
+                      <div *ngIf="file.imageThumbnail === 'YES'">
+                        <img 
                             class="card-img-top" 
-                            src="{{item.thumbnailUrl}}" 
+                            src="{{file.fileUrl}}" 
                             alt="Card image cap">
                         </div>
-                      
-                  </div>
-                </td>
+                    </div>
+                </td> -->
 
                 <td>{{item.productName}}</td>
                 <td>{{item.manufacturingPrice}}</td>
