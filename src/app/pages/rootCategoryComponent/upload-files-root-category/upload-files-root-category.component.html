@@ -7,11 +7,12 @@
       <table class="table table-light table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col">cat-id</th>
-              <th scope="col">cat-Name</th>
+              <th scope="col">cat_id</th>
+              <th scope="col">cat_Name</th>
               <th scope="col">status</th>
-              <th scope="col">image-URL</th>
-              <th scope="col">video-URL</th>
+              <th scope="col">image_URL</th>
+              <th scope="col">video_URL</th>
+              <th scope="col">File</th>
               <th scope="col">upload-image</th>
   
              
@@ -29,6 +30,12 @@
 
               <td >{{rootData.imageUrl}}</td> 
               <td>{{rootData.videoUrl}}</td>
+              
+              <td>
+                <div  *ngIf="rootData.imageUrl != null ">
+                  <img src="{{rootData.imageUrl}}"  alt="File" height="50">
+                </div>
+              </td>
 
               <td>
                 <a [routerLink]="'/dashboard/uploadFormRootCategoryFiles/'+rootData.productRootCategoryId" routerLinkActive="active">

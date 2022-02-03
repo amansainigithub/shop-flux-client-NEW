@@ -8,10 +8,11 @@
         <thead>
           <tr>
             <th scope="col">seq</th>
-            <th scope="col">cat-Name</th>
+            <th scope="col">File</th>
+            <th scope="col">cat_Name</th>
             <th scope="col">description</th>
-            <th scope="col">short-desc</th>
-            <th scope="col">long-desc</th>
+            <th scope="col">short_desc</th>
+            <th scope="col">long_desc</th>
             <th scope="col">status</th>
             <th scope="col">remove</th>
             <th scope="col">update</th>
@@ -22,6 +23,13 @@
         <tbody >
           <tr  *ngFor="let rootData of rootCategoryData; let i = index">
             <th scope="row">{{i}}</th>
+
+            <td>
+              <div  *ngIf="rootData.imageUrl != null ">
+                <img src="{{rootData.imageUrl}}"  alt="File" height="50">
+              </div>
+            </td>
+
             <td>{{rootData.rootCategoryName}}</td>
             <td>{{rootData.description}}</td>
             <td>{{rootData.shortDescription}}</td>

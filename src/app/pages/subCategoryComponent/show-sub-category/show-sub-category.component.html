@@ -5,6 +5,7 @@
         <thead>
           <tr>
             <th scope="col">#</th>
+            <th scope="col">File</th>
             <th scope="col">cat-Name</th>
             <th scope="col">desc</th>
             <th scope="col">short-desc</th>
@@ -17,6 +18,13 @@
         <tbody>
           <tr *ngFor="let subData of subCategoryData; let i = index" >
             <th scope="row">{{i}}</th>
+
+            <td>
+              <div  *ngIf="subData.imageUrl != null ">
+                <img src="{{subData.imageUrl}}"  alt="File" height="50">
+              </div>
+            </td>
+            
             <td>{{subData.subCategoryName}}</td>
             <td>{{subData.description}}</td>
             <td>{{subData.shortDescription}}</td>

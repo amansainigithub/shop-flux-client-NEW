@@ -5,18 +5,25 @@
           <thead>
             <tr>
               <th scope="col">#</th>
+              <th scope="col">FILE</th>
               <th scope="col">FINAL-cat-Name</th>
               <th scope="col">desc</th>
               <th scope="col">short-desc</th>
               <th scope="col">long-desc</th>
               <th scope="col">status</th>
-             
               <th scope="col">update</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let data of finalCategoryData; let i = index" >
               <th scope="row">{{i}}</th>
+
+              <td>
+                <div  *ngIf="data.imageUrl != null ">
+                  <img src="{{data.imageUrl}}"  alt="File" height="60">
+                </div>
+              </td>
+
               <td>{{data.finalCategoryName}}</td>
               <td>{{data.description}}</td>
               <td>{{data.shortDescription}}</td>
@@ -24,6 +31,8 @@
   
               <mat-slide-toggle  [(ngModel)]="data.finalCategoryStatus">
               </mat-slide-toggle>
+
+              
   
               <td>
               <a [routerLink]="'/dashboard/updateFinalCategory/'+data.productFinalCategoryId" routerLinkActive="active">

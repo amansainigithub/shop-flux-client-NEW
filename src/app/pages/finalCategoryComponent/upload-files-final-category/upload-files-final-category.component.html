@@ -12,6 +12,7 @@
               <th scope="col">status</th>
               <th scope="col">image-URL</th>
               <th scope="col">video-URL</th>
+              <th scope="col">FILE</th>
               <th scope="col">upload-image</th>
   
              
@@ -28,8 +29,15 @@
               </mat-slide-toggle>
 
     
-              <td>NULL OBJ</td>
-              <td>NULL OBJ</td>
+              <td >{{data.imageUrl}}</td> 
+              <td>{{data.videoUrl}}</td>
+
+              <td>
+                <div  *ngIf="data.imageUrl != null ">
+                  <img src="{{data.imageUrl}}"  alt="File" height="60">
+                </div>
+              </td>
+
               <!-- <td *ngIf="data.imageUrl==''">NULL OBJ</td> -->
               
               <!-- <td *ngIf="!data.imageUrl==''">{{data.imageUrl}}</td> -->
