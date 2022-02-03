@@ -8,6 +8,7 @@
               <tr class="text-primary">
                 <th scope="col">#</th>
                 <th scope="col">P-ID</th>
+                <th scope="col">MAIN-THUMB</th>
                 <th scope="col">PRODUCT</th>
                 <th scope="col">MANU-PRICE</th>
                 <th scope="col">MRP</th>
@@ -24,6 +25,19 @@
               <tr *ngFor="let item of productList; let i = index">
                 <th scope="row">{{i}}</th>
                 <td>{{item.productId}}</td>
+
+                <td>
+                      <div *ngIf="item.thumbnailUrl != null ">
+                        <div class="card-body" style="max-width: 110px;">
+                          <img 
+                            class="card-img-top" 
+                            src="{{item.thumbnailUrl}}" 
+                            alt="Card image cap">
+                        </div>
+                      
+                  </div>
+                </td>
+
                 <td>{{item.productName}}</td>
                 <td>{{item.manufacturingPrice}}</td>
                 <td>{{item.mrpPrice}}</td>

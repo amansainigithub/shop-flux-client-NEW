@@ -14,7 +14,7 @@
               <div class="form-group col-md-12">
                   <label>Product Name</label>
                   <input  type="text" 
-                          required 
+                         
                           [(ngModel)]="productData.productName" name="productName"
                           class="form-control"
                           placeholder="Product Name">
@@ -179,6 +179,15 @@
             class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
           </div>
          </div>
+
+            <div   class="row">
+              <div  *ngFor="let file of productData.productFileUrls" class="col-sm-2 card-body " style="max-width: 150px;">
+                  <img 
+                      class="card-img-top" 
+                      src="{{file.fileUrl}}" 
+                      alt="Card image cap">
+              </div>
+            </div>
   
          <div class="text-center">
             <button type="submit" class="btn btn-primary btn-sm">Update Product</button>

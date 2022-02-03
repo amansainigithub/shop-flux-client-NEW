@@ -14,6 +14,7 @@
                 <th scope="col">QUANTITY</th>
                 <th scope="col">SELL-P</th>
                 <th scope="col">DISCOUNT</th>
+                <th scope="col">MAIN-THUM</th>
                 <th scope="col">FILES</th>
                 <th scope="col">STATUS</th>
                 <!-- <th scope="col">LINK-IMAGES</th> -->
@@ -31,6 +32,18 @@
                 <td>{{item.quantity}}</td>
                 <td>{{item.sellPrice}}</td>
                 <td>{{item.discountAvailable}}</td>
+
+                <td>
+                  <div *ngIf="item.thumbnailUrl != null ">
+                    <div class="card-body" style="max-width: 110px;">
+                      <img 
+                        class="card-img-top" 
+                        src="{{item.thumbnailUrl}}" 
+                        alt="Card image cap">
+                    </div>
+                  
+              </div>
+            </td>
 
                 <div class="form-group">
                   <mat-slide-toggle name="isEnabled" [(ngModel)]="item.enabled">
