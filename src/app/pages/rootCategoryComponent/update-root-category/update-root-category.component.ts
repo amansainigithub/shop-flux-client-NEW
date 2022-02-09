@@ -42,7 +42,6 @@ checkbox:any={
       },
       error=>{
           console.log(error);
-          
       }
     )
   }

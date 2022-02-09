@@ -49,7 +49,7 @@ export class AddProductComponent implements OnInit {
     "savePricePercentage": "",
     "sellPrice": "",
     "shortDescription": "",
-    "isEnabled":"",
+    "productStatus":"",
     "subCategoryId": "",
     "finalCategoryId": "",
     "productHeight":"",
@@ -63,6 +63,15 @@ export class AddProductComponent implements OnInit {
     "sizeL":"",
     "sizeXL":"",
     "sizeXXL":"",
+    "size3XL":"",
+
+    "uk4":"",
+    "uk5":"",
+    "uk6":"",
+    "uk7":"",
+    "uk8":"",
+    "uk9":"",
+    "uk10":"",
     productFinalCategoryForm:
     {
       productFinalCategoryId:""
