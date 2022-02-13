@@ -47,7 +47,7 @@ import { ShowFinalCategoryComponent } from './pages/finalCategoryComponent/show-
 import { UpdateFinalCategoryComponent } from './pages/finalCategoryComponent/update-final-category/update-final-category.component';
 import { UploadFilesFinalCategoryComponent } from './pages/finalCategoryComponent/upload-files-final-category/upload-files-final-category.component';
 import { UploadFilesFormFinalCatComponent } from './pages/finalCategoryComponent/upload-files-form-final-cat/upload-files-form-final-cat.component';
-
+import { BannerTypeComponent } from './pages/banner/banner-type/banner-type.component';
 
 
 
@@ -88,6 +88,8 @@ import { UploadFilesFormFinalCatComponent } from './pages/finalCategoryComponent
     UpdateFinalCategoryComponent,
     UploadFilesFinalCategoryComponent,
     UploadFilesFormFinalCatComponent,
+    BannerTypeComponent,
+    
     
     
     
@@ -107,6 +109,7 @@ import { UploadFilesFormFinalCatComponent } from './pages/finalCategoryComponent
     MatTableModule,
     MatSelectModule,
     MatSlideToggleModule,
+    MatFormFieldModule
     
   ],
   providers: [authInterceptorProviders],

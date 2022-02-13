@@ -1,0 +1,64 @@
+<div class="container pt-5">
+
+    <h3 class="text-primary">Banner Type</h3>
+
+    <form (ngSubmit)="createBannerType()" >
+        <div class="row">
+
+          <div class="col">
+            <input type="text" 
+            [(ngModel)]="bannerTypeForm.bannerTypeName" name="bannerTypeName"
+            class="form-control" 
+            placeholder="BannerType Name">
+          </div>
+
+          <div class="col">
+            <input type="text" 
+            [(ngModel)]="bannerTypeForm.bannerTypeDesc" name="bannerTypeDesc"
+            class="form-control" 
+            placeholder="BannerType Desc">
+          </div>
+
+          <div class="col">
+            <input type="text" 
+            class="form-control" 
+            [(ngModel)]="bannerTypeForm.bannerLongDesc" name="bannerLongDesc"
+            placeholder="Banner long Desc">
+          </div>
+
+          <button type="submit" class="bannerTypeButton" style="vertical-align:middle"><span>CREATE BANNER TYPE</span></button>
+        </div>
+      </form>
+
+</div>
+
+<hr>
+
+<div class="container mt-4">
+    <h5 class="text-center text-primary ">BANNER-LIST</h5>
+
+    <table class="table table-sm text-center">
+        <thead>
+          <tr class="fontSize12">
+            <th scope="col">id</th>
+            <th scope="col">BANNER_TYPE</th>
+            <th scope="col">SHORT_DESC</th>
+            <th scope="col">LONG_DESC</th>
+            <th scope="col">REMOVE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let node of bannerTypeData; let i = index" class="fontSize11">
+            <th scope="row">{{node.id}}</th>
+            <td>{{node.bannerTypeName}}</td>
+            <td>{{node.bannerTypeDesc}}</td>
+            <td>{{node.bannerLongDesc}}</td>
+            <td>
+                <button class="button" style="vertical-align:middle"><span>Remove</span></button>
+            </td>
+          </tr>
+         
+        </tbody>
+      </table>
+
+</div>

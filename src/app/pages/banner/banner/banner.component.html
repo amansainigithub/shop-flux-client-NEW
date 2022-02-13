@@ -67,7 +67,17 @@
                       rows="3"></textarea>
                   </div>
 
-                  <div class="text-center">
+                  <div>
+                    <select class="custom-select" (change)="selectBannerType($event)">
+                      <option selected disabled>Choose...</option>
+                      <option  [value]="node.bannerTypeName" *ngFor="let node of bannerTypeData">
+                              {{node.id}} = 
+                              {{node.bannerTypeName}}
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="text-center mt-3">
                     <button mat-raised-button color="accent">CREATE BANNER</button>
                    </div>
 
@@ -82,3 +92,6 @@
 
 
 </div>
+
+
+

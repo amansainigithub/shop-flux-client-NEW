@@ -34,6 +34,7 @@ import { ShowFinalCategoryComponent } from './pages/finalCategoryComponent/show-
 import { UpdateFinalCategoryComponent } from './pages/finalCategoryComponent/update-final-category/update-final-category.component';
 import { UploadFilesFinalCategoryComponent } from './pages/finalCategoryComponent/upload-files-final-category/upload-files-final-category.component';
 import { UploadFilesFormFinalCatComponent } from './pages/finalCategoryComponent/upload-files-form-final-cat/upload-files-form-final-cat.component';
+import { BannerTypeComponent } from './pages/banner/banner-type/banner-type.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -70,6 +71,7 @@ const routes: Routes = [
               { path: 'updateFinalCategory/:finalCategoryId', component: UpdateFinalCategoryComponent},
               { path: 'uploadFilesFinalCategory', component: UploadFilesFinalCategoryComponent},
               { path: 'uploadFormFinalCategoryFiles/:finalCategoryId', component: UploadFilesFormFinalCatComponent},
+              { path: 'createBannerType', component: BannerTypeComponent},
 
 
             ]

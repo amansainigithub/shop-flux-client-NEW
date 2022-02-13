@@ -4,52 +4,38 @@ import { BannerTypeService } from 'src/app/ad_services/bannerType/banner-type.se
 import { SnackbarHelperService } from 'src/app/helper-msg/snackbar-helper.service';
 
 @Component({
-  selector: 'app-banner',
-  templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.css']
+  selector: 'app-banner-type',
+  templateUrl: './banner-type.component.html',
+  styleUrls: ['./banner-type.component.css']
 })
-export class BannerComponent implements OnInit {
+export class BannerTypeComponent implements OnInit {
 
-  constructor(private _bannerService:BannerService,
-               private _snackbar_helper:SnackbarHelperService,
-               private _bannerTypeService:BannerTypeService
-     ) { }
-  
-  bannerTypeData:any=[];
-  bannerTypeName:any;
-  
+  constructor(private _bannerTypeService:BannerTypeService, private _snackbar_helper:SnackbarHelperService) { }
+
   progressBar:any ={
     dynamicValue:false
   }
 
-  bannerForm:any={
-    "bannerId": 0,
-    "defaultName":"",
-    "bannerName": "",
-    "description": "",
-    "fileContentType": "",
-    "fileSize": "",
-    "fileUrl": "",
-    "filename": "",
-    "folderName": "",
-    "longDescription": "",
-    "shortDescription": "",
-    "bannerType":""
+  bannerTypeForm:any={
+    "bannerLongDesc":"",
+    "bannerTypeDesc": "",
+    "bannerTypeName": "",
   }
+
+  bannerTypeData:any=[];
 
   ngOnInit(): void {
-    this.fetchBannerTypeData();
+   this.fetchBannerTypeData();
   }
 
-  createBanner(){
+  createBannerType(){
     //Progress bar starting 
-    this.progressBar_Starting();
-    this.bannerForm.bannerType = this.bannerTypeName;
-     this._bannerService.saveBannerService(this.bannerForm).subscribe
+     this._bannerTypeService.saveBannerTypeService(this.bannerTypeForm).subscribe
      (data=>{
           this._snackbar_helper.
-          OpenSnackbar_verticalPosition_top_right("BANNER CREATED", "cancel",2000);
+          OpenSnackbar_verticalPosition_top_right("BANNER-TYPE CREATED", "cancel",2000);
           this.progressBar_Stop();
+          this.fetchBannerTypeData();
           return;
      },
      error=>{
@@ -66,19 +52,12 @@ export class BannerComponent implements OnInit {
       this._bannerTypeService.getBannerTypeList().subscribe(
         data=>{
             this.bannerTypeData=data;
-            console.log(data);
-            
         },
         error=>{
             console.log(error);
             
         }
       );
-  }
-
-  selectBannerType(e:any)
-  {
-    this.bannerTypeName=e.target.value;
   }
 
   progressBar_Starting()
