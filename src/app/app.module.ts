@@ -48,6 +48,7 @@ import { UpdateFinalCategoryComponent } from './pages/finalCategoryComponent/upd
 import { UploadFilesFinalCategoryComponent } from './pages/finalCategoryComponent/upload-files-final-category/upload-files-final-category.component';
 import { UploadFilesFormFinalCatComponent } from './pages/finalCategoryComponent/upload-files-form-final-cat/upload-files-form-final-cat.component';
 import { BannerTypeComponent } from './pages/banner/banner-type/banner-type.component';
+import { StructureFinalCatSingleComponent } from './pages/structureFinalCategorySingle/structure-final-cat-single/structure-final-cat-single.component';
 
 
 
@@ -89,6 +90,7 @@ import { BannerTypeComponent } from './pages/banner/banner-type/banner-type.comp
     UploadFilesFinalCategoryComponent,
     UploadFilesFormFinalCatComponent,
     BannerTypeComponent,
+    StructureFinalCatSingleComponent,
     
     
     

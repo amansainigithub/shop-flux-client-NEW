@@ -1,0 +1,79 @@
+<div *ngIf="cStructureFCData?.length == 0" class="container border col-sm-4 offset-sm-4 mt-2">
+
+        <h3 class="text-center mt-3 text-primary">CREATE CSFC </h3>
+
+    <form  (ngSubmit)="createCSFC()" >
+
+        <div class="form-group mt-3">
+            <label class="text-primary" >CSFC Description</label>
+            <textarea class="form-control" 
+             placeholder="Long description"
+             [(ngModel)]="CSFData.finalCategoryDesc" name="finalCategoryDesc"
+              rows="3"></textarea>
+          </div> 
+
+    <div class="form-group mt-3">
+        <label class="text-primary" >CSFC Type</label>
+        <textarea class="form-control" 
+        placeholder="short description" 
+        [(ngModel)]="CSFData.finalCategoryType" name="finalCategoryType"
+        rows="3"></textarea>
+      </div>
+
+    
+
+      <div>
+        <select class="custom-select" (change)="selectFinalCategory($event)">
+          <option selected disabled>Choose...</option>
+          <option  [value]="node.productFinalCategoryId" *ngFor="let node of finalCategoryList">
+                  {{node.productFinalCategoryId}} = 
+                  {{node.finalCategoryName}}
+          </option>
+        </select>
+      </div>
+
+      <div class="text-center p-2">
+        <button mat-raised-button color="accent">C-STRUCTURE FINAL CATEGORY</button>
+       </div>
+
+
+  </form>   
+
+</div>
+
+
+<div class="container mt-4">
+    <h4 class="font-weight-bold text-primary">LB-in-FE PAGE</h4>
+    <table class="table table-primary table-sm text-center" style="font-size: 11px;">
+       
+        <thead>
+          <tr>
+            <th scope="col">seq</th>
+            <th scope="col">CSF-NAME</th>
+            <th scope="col">CSF-ID</th>
+            <th scope="col">CSF-TYPE</th>
+            <th scope="col">CSF-DESC</th>
+            <th scope="col">REMOVE</th>
+          </tr>
+        </thead>
+
+        <tbody >
+
+          <tr  *ngFor="let node of cStructureFCData; let i = index">
+            <th scope="row">{{i}}</th>
+            <td>{{node.finalCategoryName}}</td>
+            <td>{{node.finalCategoryId}}</td>
+            <td>{{node.finalCategoryType}}</td>
+            <td>{{node.finalCategoryDesc}}</td>
+
+           <div >
+               <a (click)="deleteCSFC(node.id)" class="cursor-pointer">
+                <i class="fa fa-trash-o text-danger" style="font-size:12px;"></i>
+               </a>
+           </div>
+
+          </tr>
+
+        </tbody>
+      </table>
+</div>
