@@ -83,3 +83,27 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 {
     font-size: 15px;
 }
+
+
+.borderradius2
+{
+    border-radius: 2px;
+}
+
+.borderradius4
+{
+    border-radius: 4px;
+}
+.borderradius6
+{
+    border-radius: 6px;
+}
+.borderradius8
+{
+    border-radius: 8px;
+}
+
+.borderradius10
+{
+    border-radius: 10px;
+}

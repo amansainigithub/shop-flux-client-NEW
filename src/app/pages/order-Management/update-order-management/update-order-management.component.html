@@ -1,0 +1,210 @@
+<div class="pB"  *ngIf="progressBar.dynamicValue" >
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+   </div>
+
+
+<div class="container mb-5 pb-5">
+
+    <div style="max-width: 700px;">
+
+        <mat-card style="width: auto;">
+
+            <span class="font-weight-bold whitesmoke p-1">
+                Update Delivery 
+                <i class="fa fa-truck">  <span class="whitesmoke"> {{singleOrder.deliveryDateFormat}}</span> </i>
+            </span>
+
+            <hr>
+
+
+            <form  (ngSubmit)="updateOrderCurrentData()" >
+
+                        <div class="form-row mb-2">
+                            <div class="col-6">
+                                 <img src="{{singleOrder.url}}" width="auto" height="50" alt="singleOrder.url">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-6">
+                                <label class="text-primary font-weight-bold" >Product : </label>
+                            <span class="whitesmoke "> {{singleOrder.productName}}</span>
+                            </div>
+
+                            <div class="col-6">
+                                <label class="text-primary  font-weight-bold" >OrderId : </label>
+                                <span class="whitesmoke "> {{singleOrder.id}}</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-6">
+                                <label class="text-primary font-weight-bold" >Mobile : </label>
+                            <span class="whitesmoke "> {{singleOrder.mobile}}</span>
+                            </div>
+
+                            <div class="col-6">
+                                <label class="text-primary  font-weight-bold" >Address : </label>
+                                <span class="whitesmoke "> {{singleOrder.address}}</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-6">
+                                <label class="text-primary font-weight-bold" >Status : </label>
+                            <span class="whitesmoke "> {{singleOrder.status}}</span>
+                            </div>
+
+                            <div class="col-6">
+                                <label class="text-primary  font-weight-bold" >PPrice : </label>
+                                <span class="whitesmoke "> {{singleOrder.productPrice}}</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-6">
+                                <label class="text-primary font-weight-bold" >P-Quantity : </label>
+                            <span class="whitesmoke "> {{singleOrder.productQuantity}}</span>
+                            </div>
+
+                            <div class="col-6">
+                                <label class="text-primary  font-weight-bold" >Razor-pay-id : </label>
+                                <span class="whitesmoke "> {{singleOrder.razorPaymentId}}</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-6 border border-1 borderradius8">
+                                <label class="text-primary font-weight-bold"> Delivery-Date : </label>
+                                <span class="whitesmoke"> {{singleOrder.deliveryDate}}</span>
+                                <br>
+                                <label class="text-primary font-weight-bold"> Delivery-F-Date : </label>
+                                <span class="whitesmoke"> {{singleOrder.deliveryDateFormat}}</span>
+                                <br>
+                            </div>
+                            
+
+                            <div class="col-6">
+                                <label class="text-primary  font-weight-bold" >Delivery-Status : </label>
+                                <span class="whitesmoke "> {{singleOrder.deliveryStatus}}</span>
+                            </div>
+                        </div>
+
+                             <!-- DELIVERY COMP--INFO DATA -->
+                        <div class="form-row">
+                            <div class="col-6">
+                                <label class="text-primary font-weight-bold">DELIVER-ORDER-ID :</label>
+                                <span class="whitesmoke "> {{singleOrder.deliveryOrderId}}</span>
+                            </div>
+
+                            <div class="col-6">
+                                <label class="text-primary  font-weight-bold" >DELIVERY-ORDER-NAME : </label>
+                                <span class="whitesmoke "> {{singleOrder.deliveryOrderCompanyName}}</span>
+                            </div>
+                        </div>
+
+
+                        <!-- USER ID AND USER NAME -->
+                        <div class="form-row">
+                            <div class="col-6">
+                                <label class="text-primary font-weight-bold">User-Id :</label>
+                                <span class="whitesmoke "> {{singleOrder.userId}}</span>
+                            </div>
+
+                            <div class="col-6">
+                                <label class="text-primary  font-weight-bold" >User-Name : </label>
+                                <span class="whitesmoke "> {{singleOrder.userName}}</span>
+                            </div>
+                        </div>
+
+                        <hr>
+                            <!-- DATE OF DELIVERED -->
+                     <div *ngIf="singleOrder.deliveryStatus == 'N' ">
+
+                        <div>
+                            <img src="../../../../assets/order-images/delivery-running-5.gif" width="auto" height="60" alt="">
+                            <span class="text-primary"> Delivered Running...</span>
+                        </div>
+
+                        <mat-label>Date To Delivered</mat-label>
+                        <br>
+                          <mat-form-field appearance="fill">
+                            <mat-label>Choose a date</mat-label>
+                            <input matInput [matDatepicker]="picker"  (dateChange)="selectDeliveryDate($event)">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                          </mat-form-field>
+                           
+                          <br>
+                            <!-- DELIVERED STATUS -->
+                          <div  class="form-row">
+                           <div class="col-6 "> 
+                            <mat-label>Delivered</mat-label>
+                            <select class="custom-select" (change)="selectdeliveyType($event)">
+                                <option selected disabled value="N">Choose...</option>
+                                    <option  value="Y" >  YES  </option>
+                                <option  value="N" >  NO  </option>
+                              </select>
+                           </div>
+                          </div>
+
+                          <!-- DELIVERY COMP--INFO DATA -->
+                          <hr>
+                            <h5>
+                                <span class="text-primary text-primary">DELIVERY ORDER DETAILS : </span>
+                            </h5>
+                          <div class="form-row ">
+                            
+                                <div class="col-6 ">
+                                <label class="text-primary" >DELIVERY-ORDER-ID</label>
+                                <input class="form-control" 
+                                 placeholder="DELIVERY-ORDER-ID"
+                                 [(ngModel)]="singleOrder.deliveryOrderId" name="deliveryOrderId"
+                                  rows="3"/>
+                              </div>
+
+                                <div class="col-6">
+                                    <div class="form-group">
+                                            <label class="text-primary" >DELIVERY-ORDER-NAME</label>
+                                            <input class="form-control" 
+                                            placeholder="DELIVERY-ORDER-NAME"
+                                            [(ngModel)]="singleOrder.deliveryOrderCompanyName" name="deliveryOrderCompanyName"
+                                            rows="3" />
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="mt-3">
+                                <button mat-raised-button color="accent">UPDATE DELIVERY ORDER</button>
+                               </div>
+                        </div>
+
+                        <div *ngIf="singleOrder.deliveryStatus == 'Y' ">
+                            <div class="text-center">
+                                    <img src="../../../../assets/order-images/success3.png" width="auto" height="100" alt="">
+                                    
+                                    <h4><span class="text-primary whitesmoke">DELIVERED SUCCESS :</span>
+                                         <i class="fa fa-truck">  
+                                            <span class="whitesmoke"> {{singleOrder.deliveryDateFormat}}</span> 
+                                        </i> 
+                                    </h4>
+                            </div>
+                        </div>
+                          
+               
+
+                 
+
+
+              </form>   
+
+
+        </mat-card>
+
+
+    </div>
+
+
+</div>
+

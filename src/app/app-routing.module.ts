@@ -36,6 +36,8 @@ import { UploadFilesFinalCategoryComponent } from './pages/finalCategoryComponen
 import { UploadFilesFormFinalCatComponent } from './pages/finalCategoryComponent/upload-files-form-final-cat/upload-files-form-final-cat.component';
 import { BannerTypeComponent } from './pages/banner/banner-type/banner-type.component';
 import { StructureFinalCatSingleComponent } from './pages/structureFinalCategorySingle/structure-final-cat-single/structure-final-cat-single.component';
+import { OrderManagementComponent } from './pages/order-Management/order-management/order-management.component';
+import { UpdateOrderManagementComponent } from './pages/order-Management/update-order-management/update-order-management.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -74,6 +76,8 @@ const routes: Routes = [
               { path: 'uploadFormFinalCategoryFiles/:finalCategoryId', component: UploadFilesFormFinalCatComponent},
               { path: 'createBannerType', component: BannerTypeComponent},
               { path: 'saveStructureFinalCategory_Single', component: StructureFinalCatSingleComponent},
+              { path: 'orderManagement', component: OrderManagementComponent},
+              { path: 'updateOrderManagement/:orderId', component: UpdateOrderManagementComponent},
 
 
             ]
