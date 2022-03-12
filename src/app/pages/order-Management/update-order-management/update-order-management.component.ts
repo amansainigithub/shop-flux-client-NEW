@@ -43,6 +43,7 @@ export class UpdateOrderManagementComponent implements OnInit {
   {
     this.singleOrder.deliveryDate ="";  
      this.singleOrder.deliveryDate = event.target.value;
+     this.singleOrder.deliveryStatus = "R";
   }
 
   selectdeliveyType(event:any)

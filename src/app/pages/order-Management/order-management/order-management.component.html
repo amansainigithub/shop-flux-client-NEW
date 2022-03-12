@@ -61,15 +61,20 @@
                     <h5 class="font-weight-bold text-warning text-center">PENDING</h5>
                 </td>
 
-                  <td *ngIf="orderList.deliveryDate != null" >
-                    <p class="fontSize11 drTruck">
-                      {{orderList.deliveryDate}}
-                      <span class="whitesmoke ">DELIVERY RUUNING  <i class="fa fa-truck"></i> </span>
-                    </p>
-                    <img src="../../../../assets/order-images/delivery-running-4.gif"  height="45" width="100" alt="">
-                  </td>
-
             </div>
+
+            
+            <div *ngIf="orderList.deliveryStatus == 'R'">
+
+              <td *ngIf="orderList.deliveryDate != null " >
+                <p class="fontSize11 drTruck">
+                  {{orderList.deliveryDate}}
+                  <span class="whitesmoke ">DELIVERY RUUNING  <i class="fa fa-truck"></i> </span>
+                </p>
+                <img src="../../../../assets/order-images/delivery-running-4.gif"  height="45" width="100" alt="">
+              </td>
+
+        </div>
 
             <div class="text-center"  *ngIf="orderList.deliveryStatus == 'Y'">
 
