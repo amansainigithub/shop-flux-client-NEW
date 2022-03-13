@@ -52,6 +52,8 @@ export class UpdateOrderManagementComponent implements OnInit {
     this.updateOrderCurrentData()
   }
 
+
+
   updateOrderCurrentData(){
 
     this.progressBar_Starting()
@@ -68,6 +70,7 @@ export class UpdateOrderManagementComponent implements OnInit {
       error=>
       {
         console.log(error);
+
         this._snackbar_helper.
         OpenSnackbar_verticalPosition_top_right("FAILED TO UPDATE..", "cancel",2000);
         this.progressBar_Stop();

@@ -54,6 +54,7 @@ import { UpdateOrderManagementComponent } from './pages/order-Management/update-
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -121,7 +122,8 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule ,
-    MatInputModule
+    MatInputModule,
+    MatProgressSpinnerModule
     
   ],
   providers: [authInterceptorProviders,MatDatepickerModule],

@@ -117,6 +117,21 @@
                             </div>
                         </div>
 
+                        <!-- PRODUCT QUANTITY * PRODUCT PRICE -->
+                        <div class="form-row">
+                            <div class="col-6">
+                                <label class="text-primary font-weight-bold" >P-Quantity * P-Price : </label>
+                            <span class="whitesmoke "> 
+                                {{singleOrder.productQuantity}} <span class="text-primary">*</span>
+                                {{singleOrder.productPrice}} = 
+                                <i class="fa fa-inr font-weight-bold text-dark ml-1" aria-hidden="true"></i> 
+                                {{singleOrder.productQuantity * singleOrder.productPrice}}
+                            </span>
+                            </div>
+
+                        </div>
+
+
                         <hr>
                             <!-- DATE OF DELIVERED  R==>Running-->
                      <div *ngIf="singleOrder.deliveryStatus == 'N' ||  singleOrder.deliveryStatus == 'R' ">
@@ -205,4 +220,8 @@
 
 
 </div>
+
+
+
+
 
