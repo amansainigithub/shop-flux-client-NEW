@@ -1,0 +1,206 @@
+
+<div class="container mt-3">
+
+      <div>
+          <h4 class="text-center text-primary " >PRODUCT SIZE</h4>
+      </div>
+
+      <hr>
+
+       <div class="row mt-5">
+
+
+        <div class="col-sm-6">
+          
+          <h4>
+           <a href="{{currentUrl}}">
+            <span class="whitesmoke p-2 fontSize10 mb-2">Create New</span>
+           </a>
+          </h4>
+
+          <hr>
+
+              <div  style="max-width: 30rem;">
+
+                <form (ngSubmit)="updateProductSizeForProduct()" >
+                    
+                  <div>
+                    <h5 class="text-center text-primary">Create Size</h5>
+                  </div>
+        
+                    <div>
+                      <label >Select Size</label>
+                        <select class="custom-select" (change)="selectProductSize($event)">
+                          <option selected disabled>Choose...</option>
+                          <option  [value]="node.productSize" *ngFor="let node of productSizeList">
+                                  {{node.productSize}} = 
+                                  {{node.defaultName}}
+                          </option>
+                        </select>
+                      </div>
+        
+                        <div class="row mt-2">
+        
+                         
+                              <div class="col">
+                                <label >Size Selector</label>
+                                  <input 
+                                  type="text" 
+                                  id="disabledTextInput"
+                                  disabled
+                                  class="form-control" 
+                                  [(ngModel)]="updateProductSizeForm.productSize" name="productSize"
+                                  placeholder="product-Size">
+                              </div>
+
+                             
+                              <div class="col">
+                                <label >Size Name</label>
+                                <input 
+                                type="text" 
+                                [(ngModel)]="updateProductSizeForm.productSizeName" name="productSizeName"
+                                class="form-control"
+                                placeholder="Product Size Name">
+                            </div>
+        
+                           
+                            <div class="col">
+                              <label >Size Qty</label>
+                                <input 
+                                type="text" 
+                                [(ngModel)]="updateProductSizeForm.productSizeQuantity" name="productSizeQuantity"
+                                class="form-control"
+                                placeholder="Product Size qauntity">
+                            </div>
+        
+                        </div>
+        
+        
+                        <div class="row mt-2">
+
+                                
+                                    <div class="col">
+                                      <label >Short Desc</label>
+                                    <textarea type="text" 
+                                      class="form-control" 
+                                      [(ngModel)]="updateProductSizeForm.shortDescription" name="shortDescription"
+                                      placeholder="short Description" > </textarea>
+                                    </div>
+                
+                                    <div class="col">
+                                      <label >Long Desc</label>
+                                    <textarea 
+                                      type="text" 
+                                      [(ngModel)]="updateProductSizeForm.longDescription" name="longDescription"
+                                      class="form-control"
+                                      placeholder="long Description" ></textarea>
+                                      </div>
+                
+                          </div>
+
+
+                          <div class="row mt-2">
+        
+                              <div class="col">
+                                <label >Seq Num</label>
+                              <input type="text" 
+                                class="form-control" 
+                                [(ngModel)]="updateProductSizeForm.sequenceNum" name="sequenceNum"
+                                placeholder="Sequence-Num" /> 
+                              </div>
+        
+                          </div>
+          
+        
+                          <div class="text-center mt-3">
+                              <button 
+                                  type="submit" 
+                                  class=" btn btn-primary btn-sm text-white ">
+                                  Save Product Size
+                            </button>
+                          </div>
+        
+                </form>
+        
+              </div>
+         </div>
+
+
+
+         
+        <div class="col-sm-6">
+          <h3 class="text-center text-primary">Product Details</h3>
+
+
+          <!-- PRODUCT DETAILS STARTING -->
+          <div class="media">
+            <img class="align-self-start mr-3" src="{{productData.thumbnailUrl}}" height="100" width="auto" alt="Generic placeholder image">
+            <div class="media-body">
+              <h4 class="mt-0">
+                {{productData.productName}}
+              </h4>
+
+              <p>
+               <span class="text-primary" >Sell Price : </span> {{productData.sellPrice}}
+              </p>
+
+              <p>
+                <span class="text-primary">Quantity : </span> {{productData.quantity}}
+               </p>
+
+            </div>
+          </div>
+           <!-- PRODUCT DETAILS ENDING -->
+
+          <hr>
+
+          <div class="mb-3">
+            <span class="whitesmoke text-primary p-2 fontSize10">PRODUCT-SIZE</span>
+          </div>
+
+          <table class="table table-hover table-dark table-sm fontSize12">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">Id</th>
+                <th scope="col">P-Size</th>
+                <th scope="col">p-SN</th>
+                <th scope="col">p-Qty</th>
+                <th scope="col">S-Desc</th>
+                <th scope="col">S-Num</th>
+                <th scope="col" class="text-danger">Remove</th>
+                <th scope="col" class="text-warning" >update</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="text-center" *ngFor="let node of currentProductSizeList" >
+                <th scope="row">{{node.id}}</th>
+                <td>{{node.productSize}}</td>
+                <td>{{node.productSizeName}}</td>
+                <td>{{node.productSizeQuantity}}</td>
+                <td>{{node.shortDescription}}</td>
+                <td>{{node.sequenceNum}}</td>
+                
+                <td class="text-center">
+                  <a  class="cursor-pointer" (click)="removeProductSizeForProductById(node.id)">
+                     <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+                  </a>
+                </td>
+
+                <td class="text-center">
+                  <a  class="cursor-pointer" (click)="getProductSizeForProductById(node.id)">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                  </a>
+                </td>
+
+              </tr>
+            </tbody>
+          </table>
+
+
+        </div>
+
+
+       </div>
+
+
+</div>

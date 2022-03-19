@@ -38,6 +38,8 @@ import { BannerTypeComponent } from './pages/banner/banner-type/banner-type.comp
 import { StructureFinalCatSingleComponent } from './pages/structureFinalCategorySingle/structure-final-cat-single/structure-final-cat-single.component';
 import { OrderManagementComponent } from './pages/order-Management/order-management/order-management.component';
 import { UpdateOrderManagementComponent } from './pages/order-Management/update-order-management/update-order-management.component';
+import { ProductSizeComponentComponent } from './pages/product-size-component/product-size-component/product-size-component.component';
+import { UpdateProductSizeComponent } from './pages/product-size-component/update-product-size/update-product-size.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -78,6 +80,8 @@ const routes: Routes = [
               { path: 'saveStructureFinalCategory_Single', component: StructureFinalCatSingleComponent},
               { path: 'orderManagement', component: OrderManagementComponent},
               { path: 'updateOrderManagement/:orderId', component: UpdateOrderManagementComponent},
+              { path: 'createProductSize', component:ProductSizeComponentComponent },
+              { path: 'updateProductSizeComponent/:productId', component:UpdateProductSizeComponent },
 
 
             ]

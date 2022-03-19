@@ -63,7 +63,7 @@ export class AddProductComponent implements OnInit {
     "sizeL":"",
     "sizeXL":"",
     "sizeXXL":"",
-    "size3XL":"",
+    "sizeXXXL":"",
 
     "uk4":"",
     "uk5":"",

@@ -55,6 +55,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ProductSizeComponentComponent } from './pages/product-size-component/product-size-component/product-size-component.component';
+import { UpdateProductSizeComponent } from './pages/product-size-component/update-product-size/update-product-size.component';
 
 
 
@@ -99,6 +101,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     StructureFinalCatSingleComponent,
     OrderManagementComponent,
     UpdateOrderManagementComponent,
+    ProductSizeComponentComponent,
+    UpdateProductSizeComponent,
     
     
     

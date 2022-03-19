@@ -17,6 +17,7 @@
                 <th scope="col">SELL-P</th>
                 <th scope="col">DISCOUNT</th>
                 <th scope="col">STATUS</th>
+                <th scope="col">UP-PRODUCT_SIZE</th>
                 <th scope="col">UPDATE</th>
                 <th scope="col">DELETE</th>
     
@@ -63,14 +64,20 @@
                   </mat-slide-toggle>
                 </div>
 
-                <td>
+                <td class="text-center">
+                  <a class="acColor" [routerLink]="'/dashboard/updateProductSizeComponent/'+item.productId" routerLinkActive="active">
+                    <i class="fa fa-pencil-square-o cursor-pointer text-decoration-none" style="font-size:16px"></i>
+                </a>
+                </td>
+
+                <td class="text-center">
                     <a [routerLink]="'/dashboard/updateProduct/'+item.productId" routerLinkActive="active">
                           <i class="fa fa-pencil-square-o text-primary cursor-pointer text-decoration-none" style="font-size:16px"></i>
                     </a>
                   </td>
 
-                  <td scope="col">
-                    <i  (click)="removeProduct(item.productId)"  class="fa fa-trash-o text-danger cursor-pointer"></i>
+                  <td scope="col text-center">
+                    <i  (click)="removeProduct(item.productId)"  class="fa fa-trash-o text-danger cursor-pointer fontSize16"></i>
                 </td>
     
               </tr>
