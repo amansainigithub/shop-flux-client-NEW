@@ -30,6 +30,8 @@ export class AddProductComponent implements OnInit {
 
   addProduct:any = {
     "productName": "",
+    "productDefaultName": "",
+    "color": "",
     "description": "",
     "discount": "",
     "discountAvailable": true,

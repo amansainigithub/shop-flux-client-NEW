@@ -42,8 +42,18 @@
             <td>{{orderList.productName}}</td>
             <td>{{orderList.productQuantity}}</td>
             <td>{{orderList.productPrice}}</td>
-            <td>{{orderList.razorOrderId}}</td>
+
+            <td>
+              {{orderList.razorOrderId}}
+              <button mat-button (click)="moreOrderDetails(orderList.razorOrderId)">
+                order details
+                 <i class="fa fa-external-link-square"></i>
+              </button>
+
+            </td>
+
             <td>{{orderList.razorPaymentId}}</td>
+
             <td>{{orderList.status}}</td>
             <td>{{orderList.razorSignatureId}}</td>
             <td>{{orderList.userId}}</td>
@@ -110,3 +120,4 @@
       </table>
 
    </div>
+

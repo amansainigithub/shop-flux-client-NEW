@@ -57,7 +57,8 @@ import { MatInputModule } from '@angular/material/input';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ProductSizeComponentComponent } from './pages/product-size-component/product-size-component/product-size-component.component';
 import { UpdateProductSizeComponent } from './pages/product-size-component/update-product-size/update-product-size.component';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { OrderDetailsPaidComponent } from './pages/order-Management/order-details-paid/order-details-paid.component';
 
 
 
@@ -103,6 +104,7 @@ import { UpdateProductSizeComponent } from './pages/product-size-component/updat
     UpdateOrderManagementComponent,
     ProductSizeComponentComponent,
     UpdateProductSizeComponent,
+    OrderDetailsPaidComponent,
     
     
     
@@ -127,7 +129,8 @@ import { UpdateProductSizeComponent } from './pages/product-size-component/updat
     MatDatepickerModule,
     MatNativeDateModule ,
     MatInputModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule
     
   ],
   providers: [authInterceptorProviders,MatDatepickerModule],

@@ -14,6 +14,12 @@ export class OrderManagementService {
     return this.http.get(this.auth_URL.authUrl+"getCurrentPaidOrders");
   }
 
+  
+  getCurrentPaidOrdersByStatus(status:any)
+  {
+    return this.http.get(this.auth_URL.authUrl+"getCurrentPaidOrdersByStatus/"+status);
+  }
+
   //GET CURRENT PAID ORDER BY ID
   getCurrentPaidOrderById(orderId:any)
   {
@@ -24,5 +30,12 @@ export class OrderManagementService {
   updatePaidOrder(singleOrder:any)
   {
     return this.http.post(this.auth_URL.authUrl+"updateCurrentPaidOrder",singleOrder);
+  }
+
+
+  //get Order Details By Razorpay - server
+  razorpayGetOrderDetailsByOrderId(orderId:any)
+  {
+    return this.http.get(this.auth_URL.authUrl+"razorpayGetOrderDetailsByOrderId/"+orderId);
   }
 }

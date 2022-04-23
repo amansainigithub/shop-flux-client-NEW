@@ -40,6 +40,7 @@ import { OrderManagementComponent } from './pages/order-Management/order-managem
 import { UpdateOrderManagementComponent } from './pages/order-Management/update-order-management/update-order-management.component';
 import { ProductSizeComponentComponent } from './pages/product-size-component/product-size-component/product-size-component.component';
 import { UpdateProductSizeComponent } from './pages/product-size-component/update-product-size/update-product-size.component';
+import { OrderDetailsPaidComponent } from './pages/order-Management/order-details-paid/order-details-paid.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -78,10 +79,11 @@ const routes: Routes = [
               { path: 'uploadFormFinalCategoryFiles/:finalCategoryId', component: UploadFilesFormFinalCatComponent},
               { path: 'createBannerType', component: BannerTypeComponent},
               { path: 'saveStructureFinalCategory_Single', component: StructureFinalCatSingleComponent},
-              { path: 'orderManagement', component: OrderManagementComponent},
+              { path: 'orderManagement/:condition', component: OrderManagementComponent},
               { path: 'updateOrderManagement/:orderId', component: UpdateOrderManagementComponent},
               { path: 'createProductSize', component:ProductSizeComponentComponent },
-              { path: 'updateProductSizeComponent/:productId', component:UpdateProductSizeComponent },
+              { path: 'updateProductSizeComponent/:productId', component: UpdateProductSizeComponent },
+              { path: 'orderDetailsPaid/:orderId', component: OrderDetailsPaidComponent },
 
 
             ]

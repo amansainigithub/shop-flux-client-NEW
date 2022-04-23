@@ -140,8 +140,20 @@
             <div class="col-sm-2 mt-4">
                 <h5  class="text-primary font-weight-bold"  >CURRENT-ORDER</h5>
                 <mat-card >
-                    <a class="anchorUnderline" routerLink="orderManagement">
+                    <a class="anchorUnderline" routerLink="orderManagement/NONE">
                         <h5 class="orderCol_color">ORDERS</h5>
+                    </a>
+
+                    <a class="anchorUnderline" routerLink="orderManagement/N">
+                        <h5 class="orderCol_color">PENDING ORDERS</h5>
+                    </a>
+
+                    <a class="anchorUnderline" routerLink="orderManagement/R">
+                        <h5 class="orderCol_color">SHIP TO DELIVERED</h5>
+                    </a>
+
+                    <a class="anchorUnderline" routerLink="orderManagement/Y">
+                        <h5 class="orderCol_color">DELIVERED SUCCESS</h5>
                     </a>
     
                 </mat-card>

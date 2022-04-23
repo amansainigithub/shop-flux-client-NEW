@@ -9,6 +9,7 @@
                 <th scope="col">#</th>
                 <th scope="col">P-ID</th>
                 <th scope="col">MAIN_THUMB</th>
+                <th scope="col">COLOR</th>
                 <!-- <th scope="col">PRODUCT_THUMB</th> -->
                 <th scope="col">PRODUCT</th>
                 <th scope="col">MAIN_PRICE</th>
@@ -24,7 +25,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of productList; let i = index">
+              <tr class="text-center" *ngFor="let item of productList; let i = index">
                 <th scope="row">{{i}}</th>
                 <td>{{item.productId}}</td>
 
@@ -51,6 +52,10 @@
                         </div>
                     </div>
                 </td> -->
+                <td>
+                  <i class="fa fa-circle fa-2x"  [ngStyle]="{ color: item.color }">
+                  </i>
+                 </td>
 
                 <td>{{item.productName}}</td>
                 <td>{{item.manufacturingPrice}}</td>
